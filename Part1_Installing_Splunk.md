@@ -1,66 +1,80 @@
 # Session 1: How to Install Splunk Products Like an Ace Student
 
-## This lab is designed to take a fresh Linux instance and use Splunk best practices to configure Splunk. We are going to go over connecting to your client via ssh, why you should create a Splunk user, installing Splunk, checking permission and starting your Splunk instance.
+### This lab is designed to take a fresh Linux instance and use Splunk best practices to configure Splunk. We are going to go over connecting to your client via ssh,explain why you should create a Splunk user, installing Splunk, checking permission and starting your Splunk instance.
 
 
-### Instructions
-wget -O splunk-8.2.6-a6fe1ee8894b-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/8.2.6/linux/splunk-8.2.6-a6fe1ee8894b-Linux-x86_64.tgz"
+### Splunk can be downloaded directly using the command line
+#### Splunk Enterprise 9.0.5 - Linux
+```
+wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.5/linux/splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz"
+```
 
-wget -O splunk-8.2.6-a6fe1ee8894b-x64-release.msi "https://download.splunk.com/products/splunk/releases/8.2.6/windows/splunk-8.2.6-a6fe1ee8894b-x64-release.msi"
-
-wget -O splunkforwarder-8.2.6-a6fe1ee8894b-Linux-x86_64.tgz "https://download.splunk.com/products/universalforwarder/releases/8.2.6/linux/splunkforwarder-8.2.6-a6fe1ee8894b-Linux-x86_64.tgz"
-
-wget -O splunkforwarder-8.2.6-a6fe1ee8894b-x64-release.msi "https://download.splunk.com/products/universalforwarder/releases/8.2.6/windows/splunkforwarder-8.2.6-a6fe1ee8894b-x64-release.msi"
-
-wget -O splunkforwarder-8.2.6-a6fe1ee8894b-linux-2.6-x86_64.rpm "https://download.splunk.com/products/universalforwarder/releases/8.2.6/linux/splunkforwarder-8.2.6-a6fe1ee8894b-linux-2.6-x86_64.rpm"
-
-Install - Start to Finish
+### Linux Install - Start to Finish
+### If a fresh download is required then navigate to temp folder
 ```
 cd /tmp/
 ```
+### We would then use the wget command to download installer to current folder (i.e. /tmp/)
 ```
-wget -O splunk-8.2.6-a6fe1ee8894b-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/8.2.6/linux/splunk-8.2.6-a6fe1ee8894b-Linux-x86_64.tgz"
+wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.5/linux/splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz"
 ```
-### Alternatively, scp the installation file to the server depending on the install scenario
 
+### If the installer file is available from an accessible remote server location, the scp command could be used to retrieve it
+### For our .conf23 setup, the installer file is already downloaded 
 
+### Navigate to /home/splunk/ folder
+```
+cd /home/splunk/
+move to /tmp/
+```
+### expand out the compressed installer file to /opt/
+### This will create a subfoler named splunk and place all files there (/opt/splunk/)
+```
+sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
+```
+
+### {BEST PRACTICE} Splunk should always run under a dedicated accound with appropraite permissions. We already have such an account. It is named splunk
+### Confirm that account named splunk already exists
 ``` 
-sudo tar -xvzf splunk-8.2.6-a6fe1ee8894b-Linux-x86_64.tgz -C /opt/
+cat /etc/passwd | grep splunk
 ```
-
+### If a an account named splunk was needed splunk, the following command would be used. 
 ``` 
 sudo adduser splunk
 ```
 
-``` 
-cat /etc/passwd | grep splunk
-```
-
+### Run Splunk for the first time as the root user
 ```
 sudo /opt/splunk/bin/splunk start --accept-license --answer-yes 
 ```
 
+### Stop Splunk as it is running
 ```
 sudo /opt/splunk/bin/splunk stop
 ```
 
+### Configure Splunk to run when rebooted 
 ```
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1
 ```
 
+### Assign ownership of /opt/splunk and subfolders to the splunk user
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
 
+### Start Splunk running as splunk user
 ```
 sudo -u splunk /opt/splunk/bin/splunk start
 ```
 
+### Optimize the Splunk service configurations
 ```
 sudo vi /etc/systemd/system/Splunkd.service
 ```
 
-### Delete original LimitNOFILE and replace with below###
+### Open /etc/systemd/system/Splunkd.service or create if necessary
+### Delete original LimitNOFILE value and replace with 1024000
 ```
 LimitCORE=0
 LimitDATA=infinity
@@ -79,9 +93,11 @@ LimitNOFILE=1024000
 LimitNPROC=512000
 TasksMax=infinity
 ```
+### Open /etc/systemd/system/disable-thp.service
 ```
 sudo vi /etc/systemd/system/disable-thp.service
 ```
+#### Update as follows
 ```
 [Unit]
 Description=Disable Transparent Huge Pages (THP)
@@ -93,14 +109,18 @@ ExecStart=/bin/sh -c "echo 'never' > /sys/kernel/mm/transparent_hugepage/enabled
 [Install]
 WantedBy=multi-user.target
 ```
+
+### Update permissions
 ```
 sudo chmod 755 /etc/systemd/system/disable-thp.service
 ```
 
+### Reload Splunk 
 ```
 sudo systemctl daemon-reload
 ```
 
+### Start
 ```
 sudo systemctl start disable-thp
 ```
@@ -109,11 +129,11 @@ sudo systemctl start disable-thp
 sudo systemctl enable disable-thp
 ```
 
+### NOTE: You “technically” don’t have to reboot Linux. However, to ensure Splunk comes back up properly after an outage, it is a good step to take for a Splunk Enterprise installation. This should be a new instance with nothing else running on it, so it should not be impactful as it has yet to enter production. 
+### Reboot linux instance 
 ```
 sudo reboot
 ```
-
-### NOTE: You “technically” don’t have to reboot Linux. However, to ensure Splunk comes back up properly after an outage, it is a good step to take for a Splunk Enterprise installation. This should be a new instance with nothing else running on it, so it should not be impactful as it has yet to enter production. 
 
 ## Check Your Install Post Reboot
 After reboot checklist
@@ -128,5 +148,34 @@ Run health check in monitoring console
 Run health check in monitoring console
 
 ## Is splunk running as the non-root (splunk) user?
+```
 ps -ef | grep splunk
+```
 
+## Good housekeeping
+Delete Splunk installer
+
+### Other thoughts / talking points
+Disable WebUI on Indexers
+Enable WebUI on SH, DS
+Enable SSL on SH
+Enable email (SMPT) via SH UI
+forward _* internal logs to the indexers
+enable cooked Splunk port 9997 inputs on the indexers
+Apply Licence
+```
+/opt/splunk/bin/splunk edit licenser-localpeer -manager_uri 'https://deploymentserver.yourdomain.com:8089'
+/opt/splunk/bin/splunk restart
+/opt/splunk/bin/splunk list licenser-localpeer
+```
+Add deployment client
+```
+vi /opt/splunk/etc/system/local/deploymentclient.conf
+```
+```
+[deployment-client]
+[target-broker:deploymentServer]
+targetUri = https://deploymentserver.yourdomain.com:8089
+```
+School of thought: start Splunk as root first, then stop, chown, set boot and run as splunk user
+chmod v chown 
