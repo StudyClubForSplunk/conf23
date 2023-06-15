@@ -25,7 +25,7 @@ cd /home/splunk/
 ```
 cp splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
 ```
-### navigate to /tmp foler and expand out the compressed installer file to /opt/
+### navigate to /tmp foler and upack out the compressed installer files to /opt/
 ### This will create a subfoler named splunk and place all files there (/opt/splunk/)
 ```
 cd /tmp
@@ -48,25 +48,29 @@ cat /etc/passwd | grep splunk
 ``` 
 sudo adduser splunk
 ```
-
-### Run Splunk for the first time as the root user
-```
-sudo /opt/splunk/bin/splunk start --accept-license --answer-yes 
-```
-
-### Stop Splunk as it is running
-```
-sudo /opt/splunk/bin/splunk stop
-```
-
 ### Assign ownership of /opt/splunk and subfolders to the splunk user
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
+### Start Splunk for first time
+```
+sudo /opt/splunk/bin/splunk start --accept-license --answer-yes 
+```
+### Check Splunk WebUI is accessible
 
+
+### Stop Splunk as it is running
+```
+sudo /opt/splunk/bin/splunk stop
+``` 
 ### Configure Splunk to run when rebooted 
 ```
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1
+```
+
+### Assign ownership of /opt/splunk and subfolders to the splunk user to be sure
+```
+sudo chown -R splunk:splunk /opt/splunk
 ```
 
 ### Start Splunk running as splunk user
@@ -89,8 +93,8 @@ ls -las
 sudo vi /etc/systemd/system/Splunkd.service
 ```
 
-### Open /etc/systemd/system/Splunkd.service or create if necessary
-### Delete original LimitNOFILE value and replace with 1024000
+### Open /etc/systemd/system/Splunkd.service 
+### Delete line with LimitNOFILE value and replace with lines the following  
 ```
 LimitCORE=0
 LimitDATA=infinity
@@ -109,7 +113,7 @@ LimitNOFILE=1024000
 LimitNPROC=512000
 TasksMax=infinity
 ```
-### Open /etc/systemd/system/disable-thp.service
+### Create a systemd service for disabling THP
 ```
 sudo vi /etc/systemd/system/disable-thp.service
 ```
@@ -126,46 +130,49 @@ ExecStart=/bin/sh -c "echo 'never' > /sys/kernel/mm/transparent_hugepage/enabled
 WantedBy=multi-user.target
 ```
 
-### Update permissions
+### Update read permissions so all users can read and execute this file
 ```
 sudo chmod 755 /etc/systemd/system/disable-thp.service
 ```
 
-### Reload Splunk 
+### Reload Linux configurations 
 ```
 sudo systemctl daemon-reload
 ```
 
-### Start
+### Start new systemd service for disabling THP
 ```
 sudo systemctl start disable-thp
 ```
-
+### Enable new systemd service for disabling THP to allow it to run at boot-start
 ```
 sudo systemctl enable disable-thp
 ```
 
 ### NOTE: You “technically” don’t have to reboot Linux. However, to ensure Splunk comes back up properly after an outage, it is a good step to take for a Splunk Enterprise installation. This should be a new instance with nothing else running on it, so it should not be impactful as it has yet to enter production. 
-### Reboot linux instance 
-```
+
+### We are not going to reboot the linux instance for this lab
 sudo reboot
-```
 
 ## Check Your Install Post Reboot
-After reboot checklist
+
+```
+/opt/splunk/bin/splunk status
+```
 
 ## Verify that Splunk is running
 Access web front end
 
-## Is THP Disabled?
-Run health check in monitoring console
 
-## Are ulimits set?
-Run health check in monitoring console
+## Are ulimits set and THP Disabled?
+``
+cat /opt/splunk/var/log/splunk/splunkd.log | grep ulimit
+``
+Run health check in monitoring console - this requires a licence??
 
 ## Is splunk running as the non-root (splunk) user?
 ```
-ps -ef | grep splunk
+ps -ef | grep splunk/
 ```
 
 ## Good housekeeping
