@@ -73,13 +73,14 @@ sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1
 ```
 sudo -u splunk /opt/splunk/bin/splunk start
 ```
-## Validate Splunk status from cli
+## Validate Splunk permissions
 ```
 cd /opt/splunk/bin
 ```
 ```
 ls -las
 ```
+## Validate Splunk status
 ```
 ./splunk status
 ```
