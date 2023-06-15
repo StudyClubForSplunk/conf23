@@ -64,12 +64,17 @@ sudo /opt/splunk/bin/splunk enable web-ssl
 ```
 sudo /opt/splunk/bin/splunk stop
 ``` 
+
+### disable existing init-d boot-start
+```
+sudo /opt/splunk/bin/splunk disable boot-start
+```
 ### Configure Splunk to run when rebooted 
 ```
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1
 ```
 
-### Assign ownership of /opt/splunk and subfolders to the splunk user again just to be double sure
+### Assign ownership of /opt/splunk and subfolders to the splunk user again after boot-start command
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
@@ -78,14 +83,14 @@ sudo chown -R splunk:splunk /opt/splunk
 ```
 sudo -u splunk /opt/splunk/bin/splunk start
 ```
-## Validate Splunk permissions
+## confirm te Splunk permissions
 ```
 cd /opt/splunk/bin
 ```
 ```
 ls -las
 ```
-## Validate Splunk status
+## confirm Splunk status
 ```
 ./splunk status
 ```
