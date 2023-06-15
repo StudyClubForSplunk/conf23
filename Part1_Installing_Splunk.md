@@ -57,7 +57,7 @@ sudo /opt/splunk/bin/splunk start --accept-license --answer-yes
 ### Discussion Point
 
 ```
-/opt/splunk/bin/splunk enable web-ssl
+sudo /opt/splunk/bin/splunk enable web-ssl
 ```
 
 ### Stop Splunk as it is running
