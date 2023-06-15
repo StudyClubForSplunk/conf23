@@ -193,10 +193,6 @@ cat /opt/splunk/var/log/splunk/splunkd.log | grep  "Limit: open files: "
 ```
 /opt/splunk/bin/splunk search "| rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled"
 ```
-## Run Splunk search in CLI via Rest API
-```
-curl -u admin:changeme -k https://localhost:8089/services/search -d search='search "| rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled"'
-```
 
 ## Is splunk running as the non-root (splunk) user?
 ```
