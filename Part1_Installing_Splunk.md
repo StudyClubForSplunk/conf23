@@ -181,7 +181,7 @@ Access web front end
 ``
 cat /opt/splunk/var/log/splunk/splunkd.log | grep ulimit
 ``
-Run health check in monitoring console - this requires a licence??
+Run health check in monitoring console 
 
 ## Is splunk running as the non-root (splunk) user?
 ```
