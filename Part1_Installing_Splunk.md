@@ -178,42 +178,31 @@ Access web front end
 
 
 ## Are ulimits set and THP Disabled?
+### Run health check in monitoring console 
+### Check Linux OS
 ``
-cat /opt/splunk/var/log/splunk/splunkd.log | grep ulimit
+cat /opt/splunk/var/log/splunk/splunkd.log | grep  "Limit: open files: "
 ``
-Run health check in monitoring console 
+
+## Are THP Disabled?
+### Run Splunk search in Web UI
+```
+| rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled
+```
+## Run Splunk search in CLI
+```
+/opt/splunk/bin/splunk search "| rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled"
+```
+## Run Splunk search in CLI via Rest API
+```
+curl -u admin:changeme -k https://localhost:8089/services/search -d search='search "| rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled"'
+```
 
 ## Is splunk running as the non-root (splunk) user?
 ```
-ps -ef | grep splunk/
+ps -ef | grep splunk/ | grep  "/opt/splunk/bin/"
 ```
 
 ## Good housekeeping
 Delete Splunk installer
 
-### Other thoughts / talking points
-Disable WebUI on Indexers
-Enable WebUI on SH, DS
-
-
-Enable SSL on SH
-Enable email (SMPT) via SH UI
-forward _* internal logs to the indexers
-enable cooked Splunk port 9997 inputs on the indexers
-Apply Licence
-```
-/opt/splunk/bin/splunk edit licenser-localpeer -manager_uri 'https://deploymentserver.yourdomain.com:8089'
-/opt/splunk/bin/splunk restart
-/opt/splunk/bin/splunk list licenser-localpeer
-```
-Add deployment client
-```
-vi /opt/splunk/etc/system/local/deploymentclient.conf
-```
-```
-[deployment-client]
-[target-broker:deploymentServer]
-targetUri = https://deploymentserver.yourdomain.com:8089
-```
-School of thought: start Splunk as root first, then stop, chown, set boot and run as splunk user
-chmod v chown 
