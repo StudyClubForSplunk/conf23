@@ -103,7 +103,7 @@ ls -las
 sudo vi /etc/systemd/system/Splunkd.service
 ```
 
-### Delete line with LimitNOFILE value and replace with lines the following  
+#### Delete line with LimitNOFILE value and replace with lines the following  
 ```
 LimitCORE=0
 LimitDATA=infinity
