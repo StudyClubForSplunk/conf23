@@ -13,15 +13,12 @@ cd /tmp/
 wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.5/linux/splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz"
 ```
 
-### If the installer file is available from an accessible remote server location, the scp command could be used to retrieve it
 ### For our .conf23 setup, the installer file is already downloaded 
-
 ### Navigate to /home/splunk/ folder
 ```
 cd /home/splunk/
 ```
-### Move Splunk installer to /tmp folder
-### change to mv before session
+### Move Splunk installer to /tmp folder (use copy until just before session)
 ```
 cp splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
 ```
