@@ -3,12 +3,6 @@
 ### This lab is designed to take a fresh Linux instance and use Splunk best practices to configure Splunk. We are going to go over connecting to your client via ssh,explain why you should create a Splunk user, installing Splunk, checking permission and starting your Splunk instance.
 
 
-### Splunk can be downloaded directly using the command line
-#### Splunk Enterprise 9.0.5 - Linux
-```
-wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.5/linux/splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz"
-```
-
 ### Linux Install - Start to Finish
 ### If a fresh download is required then navigate to temp folder
 ```
@@ -27,18 +21,25 @@ wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/
 cd /home/splunk/
 move to /tmp/
 ```
+cp splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
+```
+```
 ### expand out the compressed installer file to /opt/
 ### This will create a subfoler named splunk and place all files there (/opt/splunk/)
 ```
 sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
 ```
+calidate /opt/spluml
+``
+ls -las /opt/splunk
+``
 
 ### {BEST PRACTICE} Splunk should always run under a dedicated accound with appropraite permissions. We already have such an account. It is named splunk
 ### Confirm that account named splunk already exists
 ``` 
 cat /etc/passwd | grep splunk
 ```
-### If a an account named splunk was needed splunk, the following command would be used. 
+### If an account named splunk is not present, the following command would be used. 
 ``` 
 sudo adduser splunk
 ```
