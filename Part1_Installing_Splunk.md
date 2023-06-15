@@ -200,5 +200,10 @@ ps -ef | grep splunk/ | grep  "/opt/splunk/bin/"
 ```
 
 ## Good housekeeping
-Delete Splunk installer
-
+### Delete Splunk installer
+```
+cd /tmp
+```
+```
+rm splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz
+```
