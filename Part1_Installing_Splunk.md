@@ -55,6 +55,10 @@ sudo /opt/splunk/bin/splunk start --accept-license --answer-yes
 ```
 ### Check Splunk WebUI is accessible
 ### Discussion Point
+Update Default hostname and Splunk server name to
+```
+StudyClubForSplunk-IDX01
+```
 
 ```
 sudo /opt/splunk/bin/splunk enable web-ssl
@@ -190,6 +194,8 @@ Delete Splunk installer
 ### Other thoughts / talking points
 Disable WebUI on Indexers
 Enable WebUI on SH, DS
+
+
 Enable SSL on SH
 Enable email (SMPT) via SH UI
 forward _* internal logs to the indexers
