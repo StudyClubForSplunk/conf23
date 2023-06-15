@@ -30,7 +30,7 @@ cd /tmp
 ```
 sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
 ```
-### validate /opt/splunk
+### confirm files arrived at /opt/splunk
 
 ``
 ls -las /opt/splunk
@@ -54,7 +54,8 @@ sudo chown -R splunk:splunk /opt/splunk
 sudo /opt/splunk/bin/splunk start --accept-license --answer-yes 
 ```
 ### Check Splunk WebUI is accessible
-Port 8000 does not appear to be configured is AWS as necessary
+### Discussion Point
+
 
 ### Stop Splunk as it is running
 ```
