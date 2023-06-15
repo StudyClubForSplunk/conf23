@@ -78,6 +78,10 @@ sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
+#### Systemd manages the Splunk service. Use 'systemctl start Splunkd' to start the service. Root permission is required. Login as root user or use sudo.
+```
+sudo systemctl start Splunkd
+```
 
 ### Start Splunk running as splunk user
 ```
