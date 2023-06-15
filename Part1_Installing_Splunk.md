@@ -54,7 +54,7 @@ sudo chown -R splunk:splunk /opt/splunk
 sudo /opt/splunk/bin/splunk start --accept-license --answer-yes 
 ```
 ### Check Splunk WebUI is accessible
-
+Port 8000 does not appear to be configured is AWS as necessary
 
 ### Stop Splunk as it is running
 ```
@@ -65,7 +65,7 @@ sudo /opt/splunk/bin/splunk stop
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1
 ```
 
-### Assign ownership of /opt/splunk and subfolders to the splunk user to be sure
+### Assign ownership of /opt/splunk and subfolders to the splunk user again just to be double sure
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
@@ -85,7 +85,7 @@ ls -las
 ```
 ./splunk status
 ```
-### Optimize the Splunk service configurations
+### Set optimized Linux OS limits for Splunk
 ```
 sudo vi /etc/systemd/system/Splunkd.service
 ```
