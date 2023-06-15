@@ -73,7 +73,16 @@ sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1
 ```
 sudo -u splunk /opt/splunk/bin/splunk start
 ```
-
+## Validate Splunk status from cli
+```
+cd /opt/splunk/bin
+```
+```
+ls -las
+```
+```
+./splunk status
+```
 ### Optimize the Splunk service configurations
 ```
 sudo vi /etc/systemd/system/Splunkd.service
