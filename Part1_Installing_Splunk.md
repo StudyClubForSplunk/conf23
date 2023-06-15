@@ -19,17 +19,22 @@ wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/
 ### Navigate to /home/splunk/ folder
 ```
 cd /home/splunk/
-move to /tmp/
+```
+### Move Splunk installer to /tmp folder
+### change to mv before session
 ```
 cp splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
 ```
-```
-### expand out the compressed installer file to /opt/
+### navigate to /tmp foler and expand out the compressed installer file to /opt/
 ### This will create a subfoler named splunk and place all files there (/opt/splunk/)
+```
+cd /tmp
+```
 ```
 sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
 ```
-calidate /opt/spluml
+### validate /opt/splunk
+
 ``
 ls -las /opt/splunk
 ``
@@ -54,14 +59,14 @@ sudo /opt/splunk/bin/splunk start --accept-license --answer-yes
 sudo /opt/splunk/bin/splunk stop
 ```
 
-### Configure Splunk to run when rebooted 
-```
-sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1
-```
-
 ### Assign ownership of /opt/splunk and subfolders to the splunk user
 ```
 sudo chown -R splunk:splunk /opt/splunk
+```
+
+### Configure Splunk to run when rebooted 
+```
+sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1
 ```
 
 ### Start Splunk running as splunk user
