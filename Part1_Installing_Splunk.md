@@ -202,11 +202,23 @@ cat /opt/splunk/var/log/splunk/splunkd.log | grep  "Limit: open files: "
 ps -ef | grep splunk/ | grep  "/opt/splunk/bin/"
 ```
 
-## Good housekeeping
-### Delete Splunk installer
+## Testing and Planning phase only
+### User localhost rather than IP in confguration
+
+#### Determine IP address
 ```
-cd /tmp
+homstname -I
 ```
+#### ensure Splunk is not running
 ```
-rm splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz
+/opt/splunk/bin/splunk stop
+```
+#### Determine which port SPlunk is using
+```
+sudo lsof -i -P -n | grep LISTEN | grep splunkd
+```
+#### Check replication port 
+#### [replication_port://****]
+```
+cat /opt/splunk-1/splunk/etc/system/local/server.conf
 ```
