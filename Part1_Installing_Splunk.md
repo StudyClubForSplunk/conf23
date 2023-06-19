@@ -32,9 +32,9 @@ sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
 ```
 ### confirm files arrived at /opt/splunk
 
-``
+```
 ls -las /opt/splunk
-``
+```
 
 ### {BEST PRACTICE} Splunk should always run under a dedicated accound with appropraite permissions. We already have such an account. It is named splunk
 ### Confirm that account named splunk already exists
@@ -50,9 +50,12 @@ sudo adduser splunk
 sudo chown -R splunk:splunk /opt/splunk
 ```
 ### Start Splunk for first time
+administrator username: admin 
+new passord: changeme
 ```
 sudo /opt/splunk/bin/splunk start --accept-license --answer-yes 
 ```
+
 ### Check Splunk WebUI is accessible
 ### Discussion Point
 Update Default hostname and Splunk server name to
