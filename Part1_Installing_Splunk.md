@@ -222,3 +222,5 @@ sudo lsof -i -P -n | grep LISTEN | grep splunkd
 ```
 cat /opt/splunk-1/splunk/etc/system/local/server.conf
 ```
+
+## when attendee instances fire up we want Splunk to be running but there is no boot-start for init.d for any instances?? It worked fine when Linux instance was haded to us by SplunkShow
