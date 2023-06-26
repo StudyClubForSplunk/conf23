@@ -226,3 +226,10 @@ cat /opt/splunk-1/splunk/etc/system/local/server.conf
 ## when attendee instances fire up we want Splunk to be running but there is no boot-start for init.d for any instances?? It worked fine when Linux instance was haded to us by SplunkShow
  
  ## Preference to use the fresh build for the SH rather than IDX-01. In case of any issues, the index will still work and we can use the CM for searching
+
+startup script
+netstat -tulpan
+
+ journalctl -xe to see booting verbose
+
+/opt/splunk-1/splunk/bin/splunk btool web list --debug | grep -v "system/default" | grep -v "rapid_diag" | grep -v "instrumentation" | grep -v "secure_gateway" | grep -v "upgrade_read" | grep -v "splunk_assist"
