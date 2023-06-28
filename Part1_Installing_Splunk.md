@@ -170,7 +170,6 @@ sudo systemctl enable disable-thp
 ### NOTE: You “technically” don’t have to reboot Linux. However, to ensure Splunk comes back up properly after an outage, it is a good step to take for a Splunk Enterprise installation. This should be a new instance with nothing else running on it, so it should not be impactful as it has yet to enter production. 
 
 ### We are not going to reboot the linux instance for this lab
-#### sudo reboot
 
 ## Check Your Install Post Reboot
 
@@ -185,9 +184,9 @@ Access web front end
 ## Are ulimits set and THP Disabled?
 ### Run health check in monitoring console 
 ### Check Linux OS
-``
+```
 cat /opt/splunk/var/log/splunk/splunkd.log | grep  "Limit: open files: "
-``
+```
 
 ## Are THP Disabled?
 ### Run Splunk search in Web UI
