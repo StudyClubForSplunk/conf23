@@ -94,7 +94,7 @@ sudo systemctl start Splunkd
 ```
 sudo -u splunk /opt/splunk/bin/splunk start
 ```
-## confirm te Splunk permissions
+## confirm the Splunk permissions
 ```
 cd /opt/splunk/bin
 ```
