@@ -73,6 +73,7 @@ sudo /opt/splunk/bin/splunk stop
 ``` 
 
 ### disable existing init-d boot-start
+#### only needed in this test environment
 ```
 sudo /opt/splunk/bin/splunk disable boot-start
 ```
