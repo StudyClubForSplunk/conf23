@@ -1,4 +1,4 @@
-# Session 3: How to Discover and Troubleshoot Data Like an Ace Student
+# Bonus - How to Discover and Troubleshoot Data Like an Ace Student
 
 ## Search for your Onboarded Data
 index=study_club source="/var/log/palo_endpoint.log"
