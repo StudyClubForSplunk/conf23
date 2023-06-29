@@ -50,6 +50,10 @@ sudo adduser splunk
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
+### confirm permissions to double confirm
+```
+ls -las /opt/splunk
+```
 ### Start Splunk for first time
 administrator username: admin 
 new passord: changeme
