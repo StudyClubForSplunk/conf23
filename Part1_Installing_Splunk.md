@@ -14,6 +14,11 @@ wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/
 ```
 cd /home/splunk/
 ```
+### Confirm Splunk installer file is present
+```
+ls
+```
+
 ### Move Splunk installer to /tmp folder (use copy until just before session)
 ```
 cp splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
