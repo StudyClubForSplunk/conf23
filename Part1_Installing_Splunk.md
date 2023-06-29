@@ -58,7 +58,7 @@ ls -las /opt/splunk
 administrator username: **admin** 
 new password: **changeme**
 ```
-sudo /opt/splunk/bin/splunk start --accept-license --answer-yes 
+/opt/splunk/bin/splunk start --accept-license --answer-yes 
 ```
 
 ### Check Splunk WebUI is accessible
@@ -67,14 +67,20 @@ Update Default hostname and Splunk server name to
 ```
 StudyClubForSplunk-IDX01
 ```
-
+add banner in blue
+udpate hostname to StudyClubForSplunk-IDX01
+update servername to StudyClubForSplunk-IDX01
+show config file as 0
+Enable ssl in UI
+show config file as 1
+could be done in command line
 ```
 sudo /opt/splunk/bin/splunk enable web-ssl
 ```
 
 ### Stop Splunk as it is running
 ```
-sudo /opt/splunk/bin/splunk stop
+/opt/splunk/bin/splunk stop
 ``` 
 
 ### disable existing init-d boot-start
@@ -84,7 +90,7 @@ sudo /opt/splunk/bin/splunk disable boot-start
 ```
 ### Configure Splunk to run when rebooted 
 ```
-sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1
+sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1 
 ```
 
 ### Assign ownership of /opt/splunk and subfolders to the splunk user again after boot-start command
