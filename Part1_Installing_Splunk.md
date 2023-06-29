@@ -196,23 +196,26 @@ sudo systemctl enable disable-thp
 ## Verify that Splunk is running
 Access web front end
 
+## Are THP Disabled?
+### Run health check in monitoring console 
+
+### Run Splunk search in Web UI
+```
+| rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled
+```
 
 ## Are ulimits set and THP Disabled?
-### Run health check in monitoring console 
+## Run Splunk search in CLI
+```
+/opt/splunk/bin/splunk search "| rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled"
+```
+
 ### Check Linux OS
 ```
 cat /opt/splunk/var/log/splunk/splunkd.log | grep  "Limit: open files: "
 ```
 
-## Are THP Disabled?
-### Run Splunk search in Web UI
-```
-| rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled
-```
-## Run Splunk search in CLI
-```
-/opt/splunk/bin/splunk search "| rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled"
-```
+
 
 ## Is splunk running as the non-root (splunk) user?
 ```
