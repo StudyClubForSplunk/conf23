@@ -77,6 +77,7 @@ could be done in command line
 ```
 sudo /opt/splunk/bin/splunk enable web-ssl
 ```
+### run health check showing failures
 
 ### Stop Splunk as it is running
 ```
