@@ -1,4 +1,4 @@
-# Session 2: How to Onboard Data Like an Ace Student
+# How to Onboard Data Like an Ace Student
 
 ## Commands needed for Study Club Session
 

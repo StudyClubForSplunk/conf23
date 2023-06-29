@@ -1,23 +1,24 @@
-# Session 1: How to Install Splunk Products Like an Ace Student
+# How to Install Splunk Products Like an Ace Student
 
 ### This lab is designed to take a fresh Linux instance and use Splunk best practices to configure Splunk. We are going to go over connecting to your client via ssh,explain why you should create a Splunk user, installing Splunk, checking permission and starting your Splunk instance.
 
 
 ### Linux Install - Start to Finish
 ### If a fresh download is required then navigate to temp folder
-```
 cd /tmp/
-```
 ### We would then use the wget command to download installer to current folder (i.e. /tmp/)
-```
 wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.5/linux/splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz"
-```
 
 ### For our .conf23 setup, the installer file is already downloaded 
 ### Navigate to /home/splunk/ folder
 ```
 cd /home/splunk/
 ```
+### Confirm Splunk installer file is present
+```
+ls
+```
+
 ### Move Splunk installer to /tmp folder (use copy until just before session)
 ```
 cp splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
@@ -73,6 +74,7 @@ sudo /opt/splunk/bin/splunk stop
 ``` 
 
 ### disable existing init-d boot-start
+#### only needed in this test environment
 ```
 sudo /opt/splunk/bin/splunk disable boot-start
 ```
@@ -94,7 +96,7 @@ sudo systemctl start Splunkd
 ```
 sudo -u splunk /opt/splunk/bin/splunk start
 ```
-## confirm te Splunk permissions
+## confirm the Splunk permissions
 ```
 cd /opt/splunk/bin
 ```
@@ -105,6 +107,7 @@ ls -las
 ```
 ./splunk status
 ```
+## Optional during session
 ### Set optimized Linux OS limits for Splunk
 ```
 sudo vi /etc/systemd/system/Splunkd.service
@@ -168,7 +171,6 @@ sudo systemctl enable disable-thp
 ### NOTE: You “technically” don’t have to reboot Linux. However, to ensure Splunk comes back up properly after an outage, it is a good step to take for a Splunk Enterprise installation. This should be a new instance with nothing else running on it, so it should not be impactful as it has yet to enter production. 
 
 ### We are not going to reboot the linux instance for this lab
-#### sudo reboot
 
 ## Check Your Install Post Reboot
 
@@ -183,9 +185,9 @@ Access web front end
 ## Are ulimits set and THP Disabled?
 ### Run health check in monitoring console 
 ### Check Linux OS
-``
+```
 cat /opt/splunk/var/log/splunk/splunkd.log | grep  "Limit: open files: "
-``
+```
 
 ## Are THP Disabled?
 ### Run Splunk search in Web UI
@@ -201,35 +203,3 @@ cat /opt/splunk/var/log/splunk/splunkd.log | grep  "Limit: open files: "
 ```
 ps -ef | grep splunk/ | grep  "/opt/splunk/bin/"
 ```
-
-## Testing and Planning phase only
-### User localhost rather than IP in confguration
-
-#### Determine IP address
-```
-homstname -I
-```
-#### ensure Splunk is not running
-```
-/opt/splunk/bin/splunk stop
-```
-#### Determine which port Splunk is using
-```
-sudo lsof -i -P -n | grep LISTEN | grep splunkd
-```
-#### Check replication port 
-#### [replication_port://****]
-```
-cat /opt/splunk-1/splunk/etc/system/local/server.conf
-```
-
-## when attendee instances fire up we want Splunk to be running but there is no boot-start for init.d for any instances?? It worked fine when Linux instance was haded to us by SplunkShow
- 
- ## Preference to use the fresh build for the SH rather than IDX-01. In case of any issues, the index will still work and we can use the CM for searching
-
-startup script
-netstat -tulpan
-
- journalctl -xe to see booting verbose
-
-/opt/splunk-1/splunk/bin/splunk btool web list --debug | grep -v "system/default" | grep -v "rapid_diag" | grep -v "instrumentation" | grep -v "secure_gateway" | grep -v "upgrade_read" | grep -v "splunk_assist"
