@@ -55,8 +55,8 @@ sudo chown -R splunk:splunk /opt/splunk
 ls -las /opt/splunk
 ```
 ### Start Splunk for first time
-administrator username: admin 
-new password: changeme
+administrator username: **admin** 
+new password: **changeme**
 ```
 sudo /opt/splunk/bin/splunk start --accept-license --answer-yes 
 ```
