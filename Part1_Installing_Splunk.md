@@ -173,6 +173,10 @@ sudo systemctl daemon-reload
 ```
 sudo systemctl start disable-thp
 ```
+### check status new systemd service for disabling THP
+```
+sudo systemctl status disable-thp
+```
 ### Enable new systemd service for disabling THP to allow it to run at boot-start
 ```
 sudo systemctl enable disable-thp
