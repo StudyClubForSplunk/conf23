@@ -146,6 +146,7 @@ TasksMax=infinity
 sudo vi /etc/systemd/system/disable-thp.service
 ```
 #### Update as follows
+### copy and paste loses carriage returns
 ```
 [Unit]
 Description=Disable Transparent Huge Pages (THP)
