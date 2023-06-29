@@ -102,10 +102,9 @@ sudo chown -R splunk:splunk /opt/splunk
 sudo systemctl start Splunkd
 ```
 
-### Start Splunk running as splunk user
-```
+### Start Splunk running as splunk user for init.d only
 sudo -u splunk /opt/splunk/bin/splunk start
-```
+
 ## confirm the Splunk permissions
 ```
 cd /opt/splunk/bin
