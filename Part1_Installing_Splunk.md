@@ -56,7 +56,7 @@ ls -las /opt/splunk
 ```
 ### Start Splunk for first time
 administrator username: admin 
-new passord: changeme
+new password: changeme
 ```
 sudo /opt/splunk/bin/splunk start --accept-license --answer-yes 
 ```
