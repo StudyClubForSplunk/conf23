@@ -221,3 +221,18 @@ cat /opt/splunk/var/log/splunk/splunkd.log | grep  "Limit: open files: "
 ```
 ps -ef | grep splunk/ | grep  "/opt/splunk/bin/"
 ```
+
+## fix ssl errors
+
+  sudo cp -r /opt/splunk-1/splunk/etc/auth/splunkweb/ /opt/splunk/etc/auth/                                                                                                               
+   cd ../                                                                                                                                                                                  
+   cd ../auth                                                                                                                                                                              
+   ls                                                                                                                                                                                      
+   cd splunkweb/                                                                                                                                                                           
+   ls                                                                                                                                                                                      
+   cd /opt/splunk/etc/system/local/                                                                                                                                                        
+   vi web.conf                                                                                                                                                                             
+   sudo systemctl stop Splunkd                                                                                                                                                             
+   vi web.conf                                                                                                                                                                             
+   sudo systemctl start Splunkd
+```
