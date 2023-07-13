@@ -1,4 +1,4 @@
-# Bonus - How to Discover and Troubleshoot Data Like an Ace Student
+# Bonus Discovery and Troubleshooting Tips 
 
 ## Search for your Onboarded Data
 index=study_club source="/var/log/palo_endpoint.log"
