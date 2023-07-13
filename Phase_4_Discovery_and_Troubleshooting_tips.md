@@ -1,4 +1,4 @@
-# Bonus Discovery and Troubleshooting Tips 
+## Bonus Discovery and Troubleshooting Tips 
 
 ## Search for your Onboarded Data
 index=study_club source="/var/log/palo_endpoint.log"
