@@ -52,7 +52,7 @@ sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
 ls -las /opt/splunk
 ```
 
-### {BEST PRACTICE} Splunk should always run under a dedicated accound with appropraite permissions. We already have such an account. It is named splunk
+### [Discussion Point] : Splunk running under a user account
 ### Confirm that account named splunk already exists
 ``` 
 cat /etc/passwd | grep splunk
@@ -63,7 +63,9 @@ cat /etc/passwd | grep splunk
 ``` 
 sudo adduser splunk
 ```
+
 ### Assign ownership of /opt/splunk and subfolders to the splunk user
+### [Discussion Point] : chown command
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
@@ -73,10 +75,15 @@ ls -las /opt/splunk
 ```
 
 ### [Observation Point] : Are the files under ownsership of the the splunk user?
-
 ### Start Splunk for first time
-administrator username: **admin** 
-new password: **changeme**
+### Splunk Administrator username: 
+```
+admin
+``` 
+### new password: 
+```
+changeme
+```
 
 ### [Discussion Point] : The how and why of starting Splunk for the first time
 ```
