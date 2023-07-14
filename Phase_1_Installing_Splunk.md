@@ -57,6 +57,8 @@ ls -las /opt/splunk
 ``` 
 cat /etc/passwd | grep splunk
 ```
+### [Observation Point] : Does the user splunk exist?
+
 ### If an account named splunk is not present, the following command would be used. 
 ``` 
 sudo adduser splunk
@@ -69,13 +71,19 @@ sudo chown -R splunk:splunk /opt/splunk
 ```
 ls -las /opt/splunk
 ```
+
+### [Observation Point] : Are the files under ownsership of the the splunk user?
+
 ### Start Splunk for first time
 administrator username: **admin** 
 new password: **changeme**
+
+### [Discussion Point] : The how and why of starting Splunk for the first time
 ```
 /opt/splunk/bin/splunk start --accept-license --answer-yes 
 ```
 
+### [Discussion Point] : Post installation testing
 ### Check Splunk WebUI is accessible
 
 Update Default hostname and Splunk server name to
