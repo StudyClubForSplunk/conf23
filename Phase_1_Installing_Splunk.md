@@ -20,7 +20,7 @@ cd /home/splunk/
 ls
 ```
 
-### Move Splunk installer to /tmp folder (use copy until just before session)
+### Move Splunk installer to /tmp folder
 ```
 cp splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
 ```
@@ -63,7 +63,7 @@ new password: **changeme**
 ```
 
 ### Check Splunk WebUI is accessible
-### Discussion Point
+
 Update Default hostname and Splunk server name to
 ```
 StudyClubForSplunk-IDX01
