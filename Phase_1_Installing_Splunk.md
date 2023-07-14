@@ -4,11 +4,11 @@
 ### This lab is designed to take a fresh Linux instance and use best practices to install and configure Splunk. We are going to go over connecting via ssh, explain why you should create a dedicated Splunk user, installing Splunk, checking permissions and starting your Splunk instance.
 
 
-### Linux Install - Start to Finish
-### We connect to Splunkshow instance via SSH
+
+### We connect to our individual Splunkshow instance via SSH
 ### We are going to do this using the web browser
 ### Use the Splunkshow URL on the enrollmennt page
-### https://pla1256c-**************.splunk.show:7469 
+### `https://pla1256c-**************.splunk.show:7469`
 ###
 ### SSH Usernname
 ```
