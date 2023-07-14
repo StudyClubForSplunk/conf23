@@ -5,7 +5,21 @@
 
 
 ### Linux Install - Start to Finish
-### If a fresh download is required then navigate to temp folder
+### We connect to Splunkshow instance via SSH
+### We are going to do this using the web browser
+### Use the Splunkshow URL on the enrollmennt page
+### https://pla1256c-**************.splunk.show:7469 
+###
+### SSH Usernname
+```
+splunk
+```
+### SSH Password
+```
+5p1unk.conf
+```
+
+### If a fresh download was required we would navigate to temp folder and download from there
 cd /tmp/
 ### We would then use the wget command to download installer to current folder (i.e. /tmp/)
 wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.5/linux/splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz"
