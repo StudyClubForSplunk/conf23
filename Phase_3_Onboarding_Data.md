@@ -45,22 +45,30 @@ cat /opt/splunk/etc/apps/search/local/indexes.conf
 ```
 cp /opt/splunk-2/splunk/etc/master-apps/_cluster/default/indexes.conf /opt/splunk-2/splunk/etc/master-apps/_cluster/local
 ```
+
 ```
-vi /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
+sudo cp /opt/splunk-2/splunk/etc/master-apps/_cluster/default/indexes.conf /opt/splunk-2/splunk/etc/master-apps/_cluster/local
 ```
-insert and update index name to studyclub_web
+
+```
+sudo nano /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
+```
+insert stanza
 ```
 [studyclub_web]
-coldPath = $SPLUNK_DB/studyclub/colddb
+coldPath = $SPLUNK_DB/studyclub_web/colddb
 enableDataIntegrityControl = 0
 enableTsidxReduction = 0
-homePath = $SPLUNK_DB/studyclub/db
+homePath = $SPLUNK_DB/studyclub_web/db
 maxTotalDataSizeMB = 512000
-thawedPath = $SPLUNK_DB/studyclub/thaweddb
+thawedPath = $SPLUNK_DB/studyclub_web/thaweddb
 repFactor = auto
 ```
 
 repFactor = auto is needed for replication
 
-:wq to save and exit
-
+### confirm file contents
+```
+sudo cat /opt/splunk-2/splunk/etc/manager-apps/_cluster/local/indexes.conf
+```
+ ### this action effectively creates bundle
