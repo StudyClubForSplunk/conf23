@@ -3,25 +3,38 @@
 
 ## Commands needed for Study Club Session
 
-## list permissions on source folder
+### list permissions on source folder
+```
 ls -las /studyclubforsplunk
+```
 
 ## list permissions on source folder and subfolders
+```
 ls -Rlas /studyclubforsplunk
+```
 
-## list effective permissions on source folder
+### list effective permissions on source folder
+```
 getfacl /studyclubforsplunk
+```
 
-## list effective permissions on source folder and subfolders
+### list effective permissions on source folder and subfolders
+```
 getfacl -R /studyclubforsplunk
+```
 
-## modify permissions on source folder and subfolders
+### modify permissions on source folder and subfolders
+```
 cd /
+```
+```
 sudo setfacl -R -m u:splunk:rx /studyclubforsplunk
+```
 
-## check effective permissions on source folder and subfolders
+### check effective permissions on source folder and subfolders
+```
 getfacl -R /studyclubforsplunk
-
+```
 
 ```
 sudo su - splunk 
