@@ -21,8 +21,9 @@ splunk
 
 ### If a fresh download was required we would navigate to temp folder and download from there
 cd /tmp/
-### We would then use the wget command to download installer to current folder (i.e. /tmp/)
+### [Discussion Point] : wget command and specifying parameters
 wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.5/linux/splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz"
+
 
 ### For our .conf23 setup, the installer file is already downloaded 
 ### Navigate to /home/splunk/ folder
