@@ -8,7 +8,7 @@
 ### We connect to our individual Splunkshow instance via SSH
 ### We are going to do this using the web browser
 ### Use the Splunkshow URL on the enrollmennt page
-### `https://pla1256c-**************.splunk.show:7469`
+#### `https://pla1256c-**************.splunk.show:7469`
 ###
 ### SSH Usernname
 ```
