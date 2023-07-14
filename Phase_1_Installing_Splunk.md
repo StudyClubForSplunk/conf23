@@ -65,7 +65,7 @@ sudo adduser splunk
 ```
 
 ### Assign ownership of /opt/splunk and subfolders to the splunk user
-### [Discussion Point] : chown command
+### [Discussion Point] : chown command and sudo
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
