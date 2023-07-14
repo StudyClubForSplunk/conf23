@@ -1,6 +1,7 @@
-# How to Install Splunk Products Like an Ace Student
+# Installing Splunk
+# Power is everything with Control
 
-### This lab is designed to take a fresh Linux instance and use Splunk best practices to configure Splunk. We are going to go over connecting to your client via ssh,explain why you should create a Splunk user, installing Splunk, checking permission and starting your Splunk instance.
+### This lab is designed to take a fresh Linux instance and use best practices to install and configure Splunk. We are going to go over connecting to your client via ssh,explain why you should create a dedicated Splunk user, installing Splunk, checking permissions and starting your Splunk instance.
 
 
 ### Linux Install - Start to Finish
