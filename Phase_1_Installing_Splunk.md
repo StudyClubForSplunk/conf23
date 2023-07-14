@@ -69,9 +69,14 @@ Update Default hostname and Splunk server name to
 StudyClubForSplunk-IDX01
 ```
 #### add global banner in blue
-#### udpate hostname to ```StudyClubForSplunk-IDX01```
+#### udpate hostname to 
+```
+StudyClubForSplunk-IDX01
+```
 #### update servername to
-``` StudyClubForSplunk-IDX01```
+``` 
+StudyClubForSplunk-IDX01
+```
 #### show config file as 0
 ### Enable ssl in UI
 #### show config file as 1
