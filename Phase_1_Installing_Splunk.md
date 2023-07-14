@@ -92,7 +92,8 @@ changeme
 ```
 
 ### [Discussion Point] : Post installation testing
-### Check Splunk WebUI is accessible
+### [Observation Point] : Splunk WebUI is accessible
+#### `https://pla1256c-**************.splunk.show:8000`
 
 Update Default hostname and Splunk server name to
 ```
