@@ -68,13 +68,14 @@ Update Default hostname and Splunk server name to
 ```
 StudyClubForSplunk-IDX01
 ```
-### add global banner in blue
-### udpate hostname to StudyClubForSplunk-IDX01
-### update servername to StudyClubForSplunk-IDX01
-### show config file as 0
+#### add global banner in blue
+#### udpate hostname to StudyClubForSplunk-IDX01
+#### update servername to StudyClubForSplunk-IDX01
+#### show config file as 0
 ### Enable ssl in UI
-### show config file as 1
-## could be done in command line
+#### show config file as 1
+
+### could be done in command line
 ```
 sudo /opt/splunk/bin/splunk enable web-ssl
 ```
