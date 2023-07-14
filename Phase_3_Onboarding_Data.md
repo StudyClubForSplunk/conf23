@@ -3,12 +3,26 @@
 
 ## Commands needed for Study Club Session
 
+## list permissions on source folder
+ls -las /studyclubforsplunk
 
-### Once connected to the jump box, use SSH again to connect to the Splunk All in One server.
+## list permissions on source folder and subfolders
+ls -Rlas /studyclubforsplunk
 
-### copy from your email message that had subject line "GAS: Your Study Club for Splunk .conf22 Lab environment is ready"
+## list effective permissions on source folder
+getfacl /studyclubforsplunk
 
-The command would look similar to "ssh username@002-Ja8Am7G5ehFh-study-club-lab-2-jumpbox.bitsioservices.com"
+## list effective permissions on source folder and subfolders
+getfacl -R /studyclubforsplunk
+
+## modify permissions on source folder and subfolders
+cd /
+sudo setfacl -R -m u:splunk:rx /studyclubforsplunk
+
+## check effective permissions on source folder and subfolders
+getfacl -R /studyclubforsplunk
+
+
 ```
 sudo su - splunk 
 ```
