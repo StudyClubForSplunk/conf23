@@ -19,9 +19,12 @@ splunk
 ```
 
 ### If a fresh download was required we would navigate to temp folder and download from there
+### [Discussion Point] : Good Housekeeping
 cd /tmp/
 ### [Discussion Point] : wget command and specifying parameters
 Reference https://www.splunk.com/en_us/download/splunk-enterprise.html#linux  
+
+Sample wget download command  
 wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.5/linux/splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz"
 
 
