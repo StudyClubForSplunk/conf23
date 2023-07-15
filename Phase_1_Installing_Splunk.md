@@ -99,7 +99,13 @@ Update Default hostname and Splunk server name to
 ```
 StudyClubForSplunk-IDX01
 ```
-#### add global banner in blue
+#### Enable global banner 
+Set Banner Visibility to On
+Set Background Color to Blue
+Set Message to
+```
+StudyClubForSplunk-IDX01
+```
 #### udpate hostname to 
 ```
 StudyClubForSplunk-IDX01
@@ -108,11 +114,7 @@ StudyClubForSplunk-IDX01
 ``` 
 StudyClubForSplunk-IDX01
 ```
-#### examine web.conf
-```
-cat /opt/splunk/etc/system/local/web.conf
-```
-### Consider SSL in WebUI
+### [Discussion Point] : Securing accessing WebUI
 #### examine web.conf
 ```
 cat /opt/splunk/etc/system/local/web.conf
