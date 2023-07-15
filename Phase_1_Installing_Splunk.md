@@ -100,9 +100,9 @@ Update Default hostname and Splunk server name to
 StudyClubForSplunk-IDX01
 ```
 #### Enable global banner 
-#### Set Banner Visibility to On
-#### Set Background Color to Blue
-#### Set Message to
+Set Banner Visibility to On  
+Set Background Color to Blue  
+Set Message to  
 ```
 StudyClubForSplunk-IDX01
 ```
