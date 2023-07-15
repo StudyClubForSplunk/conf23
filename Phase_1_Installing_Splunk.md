@@ -39,11 +39,13 @@ ls
 ```
 cp splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
 ```
-### navigate to /tmp foler and upack out the compressed installer files to /opt/
-### This will create a subfoler named splunk and place all files there (/opt/splunk/)
+### navigate to /tmp foler 
+
 ```
 cd /tmp
 ```
+### Unpack the compressed installer files to /opt/
+### This will create a subfoler named splunk and place all files there (/opt/splunk/)
 ```
 sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
 ```
@@ -106,11 +108,11 @@ Set Message to
 ```
 StudyClubForSplunk-IDX01
 ```
-#### update hostname to 
+#### Update hostname to 
 ```
 StudyClubForSplunk-IDX01
 ```
-#### update servername to
+#### Update servername to
 ``` 
 StudyClubForSplunk-IDX01
 ```
