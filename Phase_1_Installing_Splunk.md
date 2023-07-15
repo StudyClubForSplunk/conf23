@@ -93,6 +93,7 @@ changeme
 
 ### [Discussion Point] : Post installation testing
 ### [Observation Point] : Splunk WebUI is accessible
+https://placehold.it/150/ffffff/ff0000?text=[Observation Point] : Splunk WebUI is accessible
 #### `https://pla1256c-**************.splunk.show:8000`
 
 Update Default hostname and Splunk server name to
