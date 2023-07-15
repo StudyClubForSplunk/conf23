@@ -72,7 +72,8 @@ sudo adduser splunk
 ```
 
 ### Assign ownership of /opt/splunk and subfolders to the splunk user
-### [Discussion Point] : chown command
+### [Discussion Point] : chown command changes ownership
+Reference https://linuxize.com/post/linux-chown-command/  
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
@@ -98,8 +99,12 @@ changeme
 ```
 
 ### [Discussion Point] : Post installation testing
-### [Observation Point] : Splunk WebUI is accessible
+Is Splunk WebUI accessible?  
 #### `https://pla1256c-**************.splunk.show:8000`
+
+
+### [Discussion Point] : Post installation configuration
+Role of scripting  
 
 Update Default hostname and Splunk server name to
 ```
@@ -144,7 +149,7 @@ sudo /opt/splunk/bin/splunk disable boot-start
 ```
 ### Configure Splunk to run when rebooted 
 ### [Discussion Point] : What is init-d and systemd?
-Reference https://docs.splunk.com/Documentation/Splunk/9.1.0/Admin/RunSplunkassystemdservice
+Reference https://docs.splunk.com/Documentation/Splunk/9.1.0/Admin/RunSplunkassystemdservice  
 ```
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1 
 ```
@@ -176,7 +181,7 @@ ls -las
 ### [Discussion Point] : Optional to do during session 
 ### Set optimized Linux OS limits for Splunk
 ```
-sudo vi /etc/systemd/system/Splunkd.service
+sudo nano /etc/systemd/system/Splunkd.service
 ```
 
 #### Delete line with LimitNOFILE value and replace with lines the following  
@@ -217,9 +222,11 @@ WantedBy=multi-user.target
 ```
 
 ### Update read permissions so all users can read and execute this file
+### [Discussion Point] : chown changes ownership : chmod changes permissions
 ```
 sudo chmod 755 /etc/systemd/system/disable-thp.service
 ```
+Reference https://linuxize.com/post/chmod-command-in-linux/  
 
 ### Reload Linux configurations 
 ```
@@ -245,7 +252,7 @@ You “technically” don’t have to reboot Linux. However, to ensure Splunk co
 ### We are NOT going to reboot the linux instance for this lab
 
 ### [Discussion Point] : Post Implementation Testing
-## Check Your Install Post Reboot
+Check Your Install Post Reboot  
 ```
 /opt/splunk/bin/splunk status
 ```
