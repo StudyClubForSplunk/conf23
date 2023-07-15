@@ -8,5 +8,36 @@
 ### [Discussion Point] : Screenshot Guidance
 
 
+How does Splunk scale?
+What is a cluster?
+How do you build one?
+
+Start with establishing the Cluster Manager
+https://pla1256c-build.splunk.show:445/
+StudyClubForSplunk-Manager
+
+This can be achieved via command line
+/opt/splunk/bin/splunk edit cluster-config -mode master -replication_factor 2 -search_factor 2 -secret sc4sKey -cluster_label studyclub  
+/opt/splunk/bin/splunk restart  
+
+Server configuration is saved in server.conf
+view /opt/splunk-2/splunk/etc/system/local/server.conf
+
+Check what account splunk is running under
+```
+ps -aux | grep splunk/ | grep  "/opt/splunk"
+```
+
+
+```
+sudo view /opt/splunk-2/splunk/etc/system/local/server.conf
+```
+### [Discussion Point] : Missing configuration values
+
+### [Discussion Point] : btool
+```
+sudo /opt/splunk-2/splunk/bin/splunk btool server list cluster debug | grep factor
+```
+
 
 
