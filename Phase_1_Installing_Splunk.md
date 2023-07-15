@@ -141,6 +141,7 @@ sudo /opt/splunk/bin/splunk disable boot-start
 ```
 ### Configure Splunk to run when rebooted 
 ### [Discussion Point] : What is init-d and systemd?
+### Reference https://docs.splunk.com/Documentation/Splunk/9.1.0/Admin/RunSplunkassystemdservice
 ```
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1 
 ```
