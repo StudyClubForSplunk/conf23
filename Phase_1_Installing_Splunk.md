@@ -40,7 +40,7 @@ ls
 
 ### Move Splunk installer to /tmp folder
 ```
-cp splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
+mv splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
 ```
 ### navigate to /tmp foler 
 
@@ -49,6 +49,7 @@ cd /tmp
 ```
 ### Unpack the compressed installer files to /opt/
 ### This will create a subfoler named splunk and place all files there (/opt/splunk/)
+### [Discussion Point] : sudo
 ```
 sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
 ```
@@ -66,7 +67,6 @@ cat /etc/passwd | grep splunk
 ### [Observation Point] : Does the user splunk exist?
 
 ### If an account named splunk is not present, the following command would be used. 
-### [Discussion Point] : sudo
 ``` 
 sudo adduser splunk
 ```
