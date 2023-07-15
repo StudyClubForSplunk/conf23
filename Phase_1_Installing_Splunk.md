@@ -93,9 +93,9 @@ changeme
 
 ### [Discussion Point] : Post installation testing
 ### [Observation Point] : Splunk WebUI is accessible
-<span style="color: blue;">This text will be blue</span>
-
-https://placehold.it/150/ffffff/ff0000?text=[Observation Point] : Splunk WebUI is accessible
+```html
+   <span style="color:blue">This text will be blue.</span>
+```
 #### `https://pla1256c-**************.splunk.show:8000`
 
 Update Default hostname and Splunk server name to
