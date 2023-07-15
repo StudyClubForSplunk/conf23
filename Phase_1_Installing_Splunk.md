@@ -157,7 +157,7 @@ Reference https://docs.splunk.com/Documentation/Splunk/9.1.0/Admin/RunSplunkassy
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1 
 ```
 
-### Assign ownership of /opt/splunk and subfolders to the splunk user again after boot-start command
+#### Assign ownership of /opt/splunk and subfolders to the splunk user again after boot-start command
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
