@@ -3,6 +3,7 @@
 
 ### This lab is designed to take a fresh Linux instance and use best practices and our consultant experience to install and configure Splunk. We are going to go over connecting via ssh, explain why you should create a dedicated Splunk user, installing Splunk, checking permissions and starting your Splunk instance.
 
+### [Discussion Point] : Implementation Planning (ITIL)
 
 ### [Discussion Point] : connecting via ssh
 We connect to our individual Splunkshow instance command line via SSH  
@@ -50,6 +51,7 @@ cd /tmp
 Unpack the compressed installer files to /opt/  
 This will create a subfoler named splunk and place all files there (/opt/splunk/)  
 ### [Discussion Point] : sudo
+### [Discussion Point] : Governance (ITIL)
 ```
 sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
 ```
