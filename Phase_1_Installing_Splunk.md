@@ -108,9 +108,15 @@ StudyClubForSplunk-IDX01
 ``` 
 StudyClubForSplunk-IDX01
 ```
-#### show config file as 0
-### Enable ssl in UI
-#### show config file as 1
+#### examine web.conf
+```
+cat /opt/splunk/etc/system/local/web.conf
+```
+### Consider SSL in WebUI
+#### examine web.conf
+```
+cat /opt/splunk/etc/system/local/web.conf
+```
 
 ### could be done in command line
 ```
