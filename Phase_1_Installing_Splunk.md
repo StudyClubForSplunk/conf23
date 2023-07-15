@@ -47,8 +47,8 @@ mv splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
 ```
 cd /tmp
 ```
-### Unpack the compressed installer files to /opt/
-### This will create a subfoler named splunk and place all files there (/opt/splunk/)
+Unpack the compressed installer files to /opt/  
+This will create a subfoler named splunk and place all files there (/opt/splunk/)  
 ### [Discussion Point] : sudo
 ```
 sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
