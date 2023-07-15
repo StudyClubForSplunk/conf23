@@ -167,14 +167,14 @@ sudo systemctl start Splunkd
 ### [Discussion Point] : Default starting mode is init.d
 sudo -u splunk /opt/splunk/bin/splunk start
 
-## confirm the Splunk permissions
+### confirm the Splunk permissions
 ```
 cd /opt/splunk/bin
 ```
 ```
 ls -las
 ```
-## confirm Splunk status
+### confirm Splunk status
 ```
 ./splunk status
 ```
