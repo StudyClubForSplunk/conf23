@@ -1,13 +1,12 @@
 # Installing Splunk
-# Power is everything with Control
+## Power is everything with Control
 
 ### This lab is designed to take a fresh Linux instance and use best practices to install and configure Splunk. We are going to go over connecting via ssh, explain why you should create a dedicated Splunk user, installing Splunk, checking permissions and starting your Splunk instance.
 
 
-
-### We connect to our individual Splunkshow instance via SSH
-### We are going to do this using the web browser
-### Use the Splunkshow URL on the enrollmennt page
+We connect to our individual Splunkshow instance command line via SSH  
+We are going to do this using the web browser  
+Use the Splunkshow URL on the enrollmennt page  
 #### `https://pla1256c-**************.splunk.show:7469`
 ###
 ### SSH Usernname
@@ -22,7 +21,7 @@ splunk
 ### If a fresh download was required we would navigate to temp folder and download from there
 cd /tmp/
 ### [Discussion Point] : wget command and specifying parameters
-Reference https://www.splunk.com/en_us/download/splunk-enterprise.html#linux
+Reference https://www.splunk.com/en_us/download/splunk-enterprise.html#linux  
 wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.5/linux/splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz"
 
 
