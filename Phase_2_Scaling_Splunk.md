@@ -5,6 +5,7 @@
 
 ### [Discussion Point] : Implementation Planning (ITIL)
 ### [Discussion Point] : What is a Splunk all-in-one environemnt and Scaling trigger points
+### [Discussion Point] : Screenshot Guidance
 
 
 
