@@ -63,12 +63,13 @@ cat /etc/passwd | grep splunk
 ### [Observation Point] : Does the user splunk exist?
 
 ### If an account named splunk is not present, the following command would be used. 
+### [Discussion Point] : sudo
 ``` 
 sudo adduser splunk
 ```
 
 ### Assign ownership of /opt/splunk and subfolders to the splunk user
-### [Discussion Point] : chown command and sudo
+### [Discussion Point] : chown command
 ```
 sudo chown -R splunk:splunk /opt/splunk
 ```
@@ -122,9 +123,9 @@ StudyClubForSplunk-IDX01
 cat /opt/splunk/etc/system/local/web.conf
 ```
 
-### could be done in command line
+### could also be done in command line
 ```
-sudo /opt/splunk/bin/splunk enable web-ssl
+/opt/splunk/bin/splunk enable web-ssl
 ```
 ### run health check showing failures
 
@@ -134,11 +135,12 @@ sudo /opt/splunk/bin/splunk enable web-ssl
 ``` 
 
 ### disable existing init-d boot-start
-#### only needed in this test environment
+### [Discussion Point] : Why do this when we have not enabled before
 ```
 sudo /opt/splunk/bin/splunk disable boot-start
 ```
 ### Configure Splunk to run when rebooted 
+### [Discussion Point] : What is init-d and systemd?
 ```
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1 
 ```
