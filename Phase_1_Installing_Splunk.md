@@ -135,7 +135,8 @@ cat /opt/splunk/etc/system/local/web.conf
 ```
 /opt/splunk/bin/splunk enable web-ssl
 ```
-### run health check showing failures
+### [Discussion Point] : Health Checking
+Monitoring Console is your friend  
 
 ### Stop Splunk as it is running
 ```
@@ -222,7 +223,7 @@ WantedBy=multi-user.target
 ```
 
 ### Update read permissions so all users can read and execute this file
-### [Discussion Point] : chown changes ownership : chmod changes permissions
+### [Discussion Point] : chown changes ownership : chmod changes permissions : consultant boundaries
 ```
 sudo chmod 755 /etc/systemd/system/disable-thp.service
 ```
