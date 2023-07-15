@@ -27,9 +27,9 @@ Reference https://www.splunk.com/en_us/download/splunk-enterprise.html#linux
 Sample wget download command  
 wget -O splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.5/linux/splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz"
 
-
 ### For our .conf23 setup, the installer file is already downloaded 
-### Navigate to /home/splunk/ folder
+Navigate to the home folder for splunk user (/home/splunk/)  
+### [Discussion Point] : Real World v Lab Environment
 ```
 cd /home/splunk/
 ```
