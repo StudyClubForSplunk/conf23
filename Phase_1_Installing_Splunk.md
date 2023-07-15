@@ -155,7 +155,7 @@ sudo chown -R splunk:splunk /opt/splunk
 sudo systemctl start Splunkd
 ```
 
-### Start Splunk running as splunk user for init.d only
+### [Discussion Point] : Default starting mode is init.d
 sudo -u splunk /opt/splunk/bin/splunk start
 
 ## confirm the Splunk permissions
@@ -169,7 +169,8 @@ ls -las
 ```
 ./splunk status
 ```
-## Optional during session
+
+### [Discussion Point] : Optional to do during session 
 ### Set optimized Linux OS limits for Splunk
 ```
 sudo vi /etc/systemd/system/Splunkd.service
@@ -196,7 +197,7 @@ TasksMax=infinity
 ```
 ### Create a systemd service for disabling THP
 ```
-sudo vi /etc/systemd/system/disable-thp.service
+sudo nano /etc/systemd/system/disable-thp.service
 ```
 #### Update as follows
 ### copy and paste loses carriage returns
@@ -235,39 +236,37 @@ sudo systemctl status disable-thp
 sudo systemctl enable disable-thp
 ```
 
-### NOTE: You “technically” don’t have to reboot Linux. However, to ensure Splunk comes back up properly after an outage, it is a good step to take for a Splunk Enterprise installation. This should be a new instance with nothing else running on it, so it should not be impactful as it has yet to enter production. 
+### [Discussion Point] :  Rebooting the Linux Instance
+You “technically” don’t have to reboot Linux. However, to ensure Splunk comes back up properly after an outage, it is a good step to take for a Splunk Enterprise installation. This should be a new instance with nothing else running on it, so it should not be impactful as it has yet to enter production. 
 
-### We are not going to reboot the linux instance for this lab
+### We are NOT going to reboot the linux instance for this lab
 
+### [Discussion Point] : Post Implementation Testing
 ## Check Your Install Post Reboot
-
 ```
 /opt/splunk/bin/splunk status
 ```
 
 ## Verify that Splunk is running
 Access web front end
+#### `https://pla1256c-**************.splunk.show:8000`
 
-## Are THP Disabled?
-### Run health check in monitoring console 
+## Are Transparent Huge Pages (THP) Disabled?
+### Method 1 Run health check in monitoring console 
 
-### Run Splunk search in Web UI
+### Method 2 Run Splunk search in Web UI
 ```
 | rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled
 ```
-
-## Are ulimits set and THP Disabled?
-## Run Splunk search in CLI
+## Method 3 Run Splunk search in CLI
 ```
 /opt/splunk/bin/splunk search "| rest /services/server/sysinfo | fields splunk_server transparent_hugepages.defrag transparent_hugepages.effective_state transparent_hugepages.enabled"
 ```
 
-### Check Linux OS
+### Check Linux OS for ulimits settings
 ```
 cat /opt/splunk/var/log/splunk/splunkd.log | grep  "Limit: open files: "
 ```
-
-
 
 ## Is splunk running as the non-root (splunk) user?
 ```
