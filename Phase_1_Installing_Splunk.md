@@ -94,7 +94,7 @@ changeme
 ### [Discussion Point] : Post installation testing
 ### [Observation Point] : Splunk WebUI is accessible
 ```html
-   // <b> hello </b>
+   <b> hello </b>
 ```
 https://placehold.it/150/ffffff/ff0000?text=[Observation Point] : Splunk WebUI is accessible
 #### `https://pla1256c-**************.splunk.show:8000`
