@@ -7,8 +7,9 @@
 ### [Discussion Point] : Implementation Planning (ITIL)
 ### [Discussion Point] : Splunk Instance Types
 What is an all-in-one  
-What is a cluster  
+What is an indexer cluster  
 Scaling trigger points  
+Members of an indexer cluster
 
 ### [Discussion Point] : Building out an Indexer Cluster
 Order of implementation  
