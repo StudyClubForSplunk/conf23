@@ -16,7 +16,7 @@ Order of implementation
 
 ### StudyClubForSplunk-Manager
 Web UI can be used  
-This can be achieved via command line
+This can be achieved via command line  
 /opt/splunk/bin/splunk edit cluster-config -mode master -replication_factor 2 -search_factor 2 -secret sc4sKey -cluster_label studyclub  
 /opt/splunk/bin/splunk restart  
 
