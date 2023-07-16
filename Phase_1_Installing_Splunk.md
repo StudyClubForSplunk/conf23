@@ -140,8 +140,7 @@ cat /opt/splunk/etc/system/local/web.conf
 ```
 /opt/splunk/bin/splunk enable web-ssl
 ```
-### [Discussion Point] : Health Checking
-Monitoring Console is your friend  
+
 
 ### Stop Splunk as it is running
 ```
@@ -160,10 +159,7 @@ Reference https://docs.splunk.com/Documentation/Splunk/9.1.0/Admin/RunSplunkassy
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1 
 ```
 
-#### Assign ownership of /opt/splunk and subfolders to the splunk user again after boot-start command
-```
-sudo chown -R splunk:splunk /opt/splunk
-```
+
 #### Systemd manages the Splunk service. Use 'systemctl start Splunkd' to start the service. Root permission is required. Login as root user or use sudo.
 ```
 sudo systemctl start Splunkd
