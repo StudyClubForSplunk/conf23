@@ -38,6 +38,7 @@ sudo cat /opt/splunk-2/splunk/etc/system/local/server.conf
 
 
 ### [Discussion Point] : btool is your friend
+What configuration is written to disk?
 ```
 sudo /opt/splunk-2/splunk/bin/splunk btool server list cluster debug | grep factor
 ```
