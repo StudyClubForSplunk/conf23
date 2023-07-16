@@ -55,23 +55,24 @@ This will create a subfoler named splunk and place all files there (/opt/splunk/
 ```
 sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
 ```
+
+### [Discussion Point] : Splunk running under a user account
+### Confirm that account named splunk already exists
+
+cat /etc/passwd | grep splunk  
+
+### [Observation Point] : Does the user splunk exist?
+
+### If an account named splunk is not present, the following command would be used. 
+
+sudo adduser splunk  
+
 ### confirm files arrived at /opt/splunk
 
 ```
 ls -las /opt/splunk
 ```
 
-### [Discussion Point] : Splunk running under a user account
-### Confirm that account named splunk already exists
-``` 
-cat /etc/passwd | grep splunk
-```
-### [Observation Point] : Does the user splunk exist?
-
-### If an account named splunk is not present, the following command would be used. 
-``` 
-sudo adduser splunk
-```
 
 ### Assign ownership of /opt/splunk and subfolders to the splunk user
 ### [Discussion Point] : chown command changes ownership
