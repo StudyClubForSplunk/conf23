@@ -47,7 +47,7 @@ sudo lsof -i -P -n | grep LISTEN | grep splunkd
 ### select a port that is not in use 
 ## [Discussion Point] : Change Control (ITIL)
 
-
+### Peer node configuration for StudyClubForSplunk-IDX02
 Manager URI  
 ```
 https://localhost:8092
@@ -59,4 +59,11 @@ Peer replication port
 Security key  
 ```
 studyclub
+```
+
+### After restarting StudyClubForSplunk-IDX02
+Implementation Testing Step  
+show that Splunk is now listening on port 8081  
+```
+sudo lsof -i -P -n | grep LISTEN | grep splunkd
 ```
