@@ -21,16 +21,15 @@ This can be achieved via command line
 /opt/splunk/bin/splunk restart  
 
 Server configuration is saved in server.conf
-view /opt/splunk-2/splunk/etc/system/local/server.conf
+cat /opt/splunk-2/splunk/etc/system/local/server.conf
 
 Check what account splunk is running under
 ```
 ps -aux | grep splunk/ | grep  "/opt/splunk/"
 ```
 
-
 ```
-sudo view /opt/splunk-2/splunk/etc/system/local/server.conf
+sudo cat /opt/splunk-2/splunk/etc/system/local/server.conf
 ```
 ### [Discussion Point] : Missing configuration values
 
