@@ -38,5 +38,25 @@ sudo cat /opt/splunk-2/splunk/etc/system/local/server.conf
 sudo /opt/splunk-2/splunk/bin/splunk btool server list cluster debug | grep factor
 ```
 
+### Check what ports are in use by Splunk
+cd /opt/splunk-2/splunk/etc/system/local
+
+sudo lsof -i -P -n
+### narrow down for Splunk
+sudo lsof -i -P -n | grep LISTEN | grep splunkd
+### select a port that is not in use 
+## [Discussion Point] : Change Control (ITIL)
 
 
+Manager URI  
+```
+https://localhost:8092
+```
+Peer replication port  
+```
+8081
+```
+Security key  
+```
+studyclub
+```
