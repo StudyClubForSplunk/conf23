@@ -142,7 +142,7 @@ changeme
 
 ## [Discussion Point] : Monitor Console - Instance Roles
 
-Implementation Testing Step    
+### Implementation Testing Steps    
 Confirm visibility in Monitoring Console Overview on StudyClubForSplunk-Manager  
 Confirm Clustering Setup on StudyClubForSplunk-SH01  
 
