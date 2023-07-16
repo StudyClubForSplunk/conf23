@@ -25,7 +25,7 @@ view /opt/splunk-2/splunk/etc/system/local/server.conf
 
 Check what account splunk is running under
 ```
-ps -aux | grep splunk/ | grep  "/opt/splunk"
+ps -aux | grep splunk/ | grep  "/opt/splunk/"
 ```
 
 
