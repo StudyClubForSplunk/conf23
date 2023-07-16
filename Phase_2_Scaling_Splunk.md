@@ -42,6 +42,7 @@ sudo cat /opt/splunk-2/splunk/etc/system/local/server.conf
 sudo /opt/splunk-2/splunk/bin/splunk btool server list cluster debug | grep factor
 ```
 
+### We need to be able to assign ports for clustering
 ### Check what ports are in use by Splunk
 
 sudo lsof -i -P -n
