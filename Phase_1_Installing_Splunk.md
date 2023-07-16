@@ -87,6 +87,13 @@ ls -las /opt/splunk
 
 ### [Observation Point] : Are the files under ownsership of the the splunk user?
 ### Start Splunk for first time
+
+
+### [Discussion Point] : The how and why of starting Splunk for the first time
+```
+/opt/splunk/bin/splunk start --accept-license --answer-yes 
+```
+
 ### Splunk Administrator username: 
 ```
 admin
@@ -94,11 +101,6 @@ admin
 ### new password: 
 ```
 changeme
-```
-
-### [Discussion Point] : The how and why of starting Splunk for the first time
-```
-/opt/splunk/bin/splunk start --accept-license --answer-yes 
 ```
 
 ### [Discussion Point] : Post installation testing
