@@ -112,19 +112,17 @@ sudo cat /opt/splunk-2/splunk/etc/manager-apps/_cluster/local/indexes.conf
  ### Command line method on StudyClubForSplunk-Manager
  ### [Discussion Point] : update correct files in correct locations
  Implementation Planning   
- Check and validate the bundle
- ```
-/opt/splunk-2/splunk/bin/splunk validate cluster-bundle
-```
-Push out bundle
-```
-/opt/splunk-2/splunk/bin/splunk apply cluster-bundle
-```
-Check status of the pushed bundle
-```
-/opt/splunk-2/splunk/bin/splunk show cluster-bundle-status
-```
+ Check and validate the bundle  
+ 
+/opt/splunk-2/splunk/bin/splunk validate cluster-bundle  
 
+Push out bundle  
+
+/opt/splunk-2/splunk/bin/splunk apply cluster-bundle  
+
+Check status of the pushed bundle  
+
+/opt/splunk-2/splunk/bin/splunk show cluster-bundle-status  
 
 
 ### Check if index is showing in WebUI on StudyClubForSplunk-Manager
