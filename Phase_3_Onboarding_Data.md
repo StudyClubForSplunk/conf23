@@ -106,10 +106,8 @@ sudo cat /opt/splunk-2/splunk/etc/manager-apps/_cluster/local/indexes.conf
  ### this action effectively creates a bundle
 
  ### [Discussion Point] : How can budles be pushed out
-
- ### We use the WebUI on StudyClubForSplunk-Manager for this session
-
- ### Command line method on StudyClubForSplunk-Manager
+We use the WebUI on StudyClubForSplunk-Manager for this session  
+Command line method on StudyClubForSplunk-Manager  would be  
  ### [Discussion Point] : update correct files in correct locations
  Implementation Planning   
  ### Check and validate the bundle  
