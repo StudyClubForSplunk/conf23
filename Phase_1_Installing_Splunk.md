@@ -286,3 +286,5 @@ cat /opt/splunk/var/log/splunk/splunkd.log | grep  "Limit: open files: "
 ps -ef | grep splunk/ | grep  "/opt/splunk/bin/"
 ```
 ### [Discussion Point] : Closing out Release Implementation plan (ITIL)
+
+## [Observation Point] : Attendee Progress

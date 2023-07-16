@@ -142,7 +142,8 @@ changeme
 
 ## [Discussion Point] : Monitor Console - Instance Roles
 
-Implementation Testing Step  
-Confirm visibility in Monitoring Console Overview on StudyClubForSplunk-Manager
-Confirm Clustering Setup on StudyClubForSplunk-SH01 
+Implementation Testing Step    
+Confirm visibility in Monitoring Console Overview on StudyClubForSplunk-Manager  
+Confirm Clustering Setup on StudyClubForSplunk-SH01  
 
+## [Observation Point] : Attendee Progress
