@@ -34,7 +34,7 @@ ps -aux | grep splunk/ | grep  "/opt/splunk/"
 ```
 sudo cat /opt/splunk-2/splunk/etc/system/local/server.conf
 ```
-### [Discussion Point] : Are there ANY Missing configuration values
+### [Discussion Point] : Are there any missing configuration values
 
 
 ### [Discussion Point] : btool is your friend
