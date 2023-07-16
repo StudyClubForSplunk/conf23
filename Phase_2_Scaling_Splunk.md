@@ -5,12 +5,13 @@
 
 ### [Discussion Point] : Screenshot Guidance
 ### [Discussion Point] : Implementation Planning (ITIL)
-### [Discussion Point] : What is a Splunk all-in-one environemnt and Scaling trigger points
+### [Discussion Point] : Splunk Instance Types
+What is an all-in-one
 What is a cluster  
+Scaling trigger points  
 
 ### [Discussion Point] : Building out an Indexer Cluster
 Order of implementation  
-
 
 ### StudyClubForSplunk-Manager
 Web UI can be used  
