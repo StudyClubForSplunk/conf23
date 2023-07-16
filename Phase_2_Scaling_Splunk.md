@@ -1,7 +1,7 @@
 # Scaling Splunk
 ## Ambition bites the nails of success
 
-### This phase is designed to build out our Splunk infrastructure to be able to handle more data using best practices and our consultant experience to install and configure Splunk. We are going to go over connecting via ssh, explain why you should create a dedicated Splunk user, installing Splunk, checking permissions and starting your Splunk instance.
+### This phase is designed to build out our Splunk infrastructure to be able to handle more data using best practices and our consultant experience.
 
 ### [Discussion Point] : Screenshot Guidance
 ### [Discussion Point] : Implementation Planning (ITIL)
