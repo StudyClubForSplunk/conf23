@@ -45,9 +45,13 @@ sudo /opt/splunk-2/splunk/bin/splunk btool server list cluster debug | grep fact
 ### We need to be able to assign ports for clustering
 ### Check what ports are in use by Splunk
 
+```
 sudo lsof -i -P -n
+```
 ### narrow down for Splunk
+```
 sudo lsof -i -P -n | grep LISTEN | grep splunkd
+```
 ### select a port that is not in use 
 ## [Discussion Point] : Change Control (ITIL)
 
