@@ -3,25 +3,26 @@
 
 ### This phase is designed to build out our Splunk infrastructure to be able to handle more data using best practices and our consultant experience to install and configure Splunk. We are going to go over connecting via ssh, explain why you should create a dedicated Splunk user, installing Splunk, checking permissions and starting your Splunk instance.
 
+### [Discussion Point] : Screenshot Guidance
 ### [Discussion Point] : Implementation Planning (ITIL)
 ### [Discussion Point] : What is a Splunk all-in-one environemnt and Scaling trigger points
-### [Discussion Point] : Screenshot Guidance
+What is a cluster  
+
+### [Discussion Point] : Building out an Indexer Cluster
+Order of implementation  
 
 
-How does Splunk scale?
-What is a cluster?
-How do you build one?
-
-Start with establishing the Cluster Manager
-https://pla1256c-build.splunk.show:445/
-StudyClubForSplunk-Manager
-
+### StudyClubForSplunk-Manager
+Web UI can be used  
 This can be achieved via command line
 /opt/splunk/bin/splunk edit cluster-config -mode master -replication_factor 2 -search_factor 2 -secret sc4sKey -cluster_label studyclub  
 /opt/splunk/bin/splunk restart  
 
 Server configuration is saved in server.conf
+```
 cat /opt/splunk-2/splunk/etc/system/local/server.conf
+```
+### [Observation Point] : Was the splunk user able to view server.conf
 
 Check what account splunk is running under
 ```
@@ -31,15 +32,15 @@ ps -aux | grep splunk/ | grep  "/opt/splunk/"
 ```
 sudo cat /opt/splunk-2/splunk/etc/system/local/server.conf
 ```
-### [Discussion Point] : Missing configuration values
+### [Discussion Point] : Are there ANY Missing configuration values
 
-### [Discussion Point] : btool
+
+### [Discussion Point] : btool is your friend
 ```
 sudo /opt/splunk-2/splunk/bin/splunk btool server list cluster debug | grep factor
 ```
 
 ### Check what ports are in use by Splunk
-cd /opt/splunk-2/splunk/etc/system/local
 
 sudo lsof -i -P -n
 ### narrow down for Splunk
@@ -58,7 +59,7 @@ Peer replication port
 ```
 Security key  
 ```
-studyclub
+sc4sKey
 ```
 
 ### After restarting StudyClubForSplunk-IDX02
@@ -67,3 +68,74 @@ show that Splunk is now listening on port 8081
 ```
 sudo lsof -i -P -n | grep LISTEN | grep splunkd
 ```
+
+
+### Peer node configuration for StudyClubForSplunk-IDX01
+Manager URI  
+```
+https://localhost:8092
+```
+Peer replication port  
+```
+8080
+```
+Security key  
+```
+sc4sKey
+```
+
+### After restarting StudyClubForSplunk-IDX01
+Implementation Testing Step  
+show that Splunk is now listening on port 8080    
+```
+sudo lsof -i -P -n | grep LISTEN | grep splunkd
+```
+
+
+### Peer node configuration for StudyClubForSplunk-SH01
+Manager URI  
+```
+https://localhost:8092
+```
+Security key  
+```
+sc4sKey
+```
+
+### After restarting StudyClubForSplunk-SH01
+Implementation Testing Step  
+show that Splunk is now listening on port 8080    
+```
+sudo lsof -i -P -n | grep LISTEN | grep splunkd
+```
+
+## [Discussion Point] : Monitor Console Mode
+
+## [Observation Point] : Is StudyClubForSplunk-SH01 showing in monitor console on StudyClubForSplunk-Manager
+
+Add search peers
+Peer URI  
+```
+https://localhost:8093
+```
+
+Distributed search authentication
+Remote username  
+```
+admin
+```
+Remote password  
+```
+changeme
+```
+Confirm password
+```
+changeme
+```
+
+## [Discussion Point] : Monitor Console - Instance Roles
+
+Implementation Testing Step  
+Confirm visibility in Monitoring Console Overview on StudyClubForSplunk-Manager
+Confirm Clustering Setup on StudyClubForSplunk-SH01 
+
