@@ -49,11 +49,11 @@ sudo /opt/splunk-2/splunk/bin/splunk btool server list cluster debug | grep fact
 ```
 sudo lsof -i -P -n
 ```
-### observe ports used by Splunk
+### Observe ports used by Splunk
 ```
 sudo lsof -i -P -n | grep LISTEN | grep splunkd
 ```
-### be sure to select a port that is not in use - * Implementation Planning * 
+### Be sure to select a port that is not in use - * Implementation Planning * 
 ## [Discussion Point] : Change Control (ITIL)
 
 ### Peer node configuration for StudyClubForSplunk-IDX02
