@@ -56,6 +56,7 @@ sudo tar -xvzf splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz -C /opt/
 ```
 ### [Discussion Point] : sudo
 ### [Discussion Point] : Governance (ITIL)
+### [Discussion Point] : Implementation Planning, CAB (ITIL)
 ```
 ### [Discussion Point] : Splunk running under a user account
 ### Confirm that account named splunk already exists
