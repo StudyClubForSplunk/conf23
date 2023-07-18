@@ -111,6 +111,7 @@ Command line method on StudyClubForSplunk-Manager  would be
  ### [Discussion Point] : Implementation Planning 
  use correct locations  
  right action  
+ right command  
  right configuration  
  right instance  
  right permissions  
