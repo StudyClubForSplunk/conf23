@@ -109,7 +109,7 @@ sudo /opt/splunk-2/splunk/bin/splunk btool server list cluster debug | grep fact
 
 ### confirm file contents
 ```
-sudo cat /opt/splunk-2/splunk/etc/manager-apps/_cluster/local/indexes.conf
+sudo cat /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
 ```
  ### this action effectively creates a bundle
 
