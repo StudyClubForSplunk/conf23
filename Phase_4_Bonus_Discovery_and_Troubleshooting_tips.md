@@ -10,10 +10,11 @@ index=_internal TAILREADER file="'/studyclubforsplunk/www2/access.log'"
 ## Change to Splunk User
 sudo su - splunk
 
-## Check for Issues on Splunk's Inputstatus
+## Check for Issues on Splunk's Inputstatus via commandline
+```
 /opt/splunk/bin/splunk list inputstatus
-
-## Check for Issues via REST
+```
+## Check for Issues via REST via commandline
 ```
 /opt/splunk/bin/splunk _internal call /services/admin/inputstatus/TailingProcessor:FileStatus
  ```
