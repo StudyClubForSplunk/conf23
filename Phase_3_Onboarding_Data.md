@@ -171,21 +171,14 @@ Check index in WebUI of StudyClubForSplunk-IDX02 using SPL
 use existing index web_studyclub during wizard
 
 ### [Observation Point] : Has data been onboarded?
-Check in WebUI of StudyClubForSplunk-IDX02 using SPL  
-```
-index=web_studyclub
-```
-Check in WebUI of StudyClubForSplunk-SH01 using SPL  
-```
-index=web_studyclub
-```
-Check in WebUI of StudyClubForSplunk-IDX01 using SPL  
-```
-index=web_studyclub
-```
 
 ### [Observation Point] : Are index buckets showing up on StudyClubForSplunk-Manager
 Observe Indexer Clustering : Manager Node page
 
+
+Check in WebUI of StudyClubForSplunk-SH01 using SPL  
+```
+index=web_studyclub
+```
 
 ### [Observation Point] : How could this be more effecient and more automated
