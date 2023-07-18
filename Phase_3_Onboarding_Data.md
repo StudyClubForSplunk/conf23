@@ -74,16 +74,16 @@ cat /opt/splunk/etc/apps/search/local/indexes.conf
 
 ### Check if file already exist
 ```
-sudo cat /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
+sudo cat /opt/splunk-2/splunk/etc/manager-apps/_cluster/local/indexes.conf
 ```
 
 ### [Discussion Point] : Default folder v Local folder
 
 ```
-sudo cat /opt/splunk-2/splunk/etc/master-apps/_cluster/default/indexes.conf
+sudo cat /opt/splunk-2/splunk/etc/manager-apps/_cluster/default/indexes.conf
 ```
 ```
-sudo vi /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
+sudo vi /opt/splunk-2/splunk/etc/manager-apps/_cluster/local/indexes.conf
 ```
 insert below stanza
 ```
@@ -109,7 +109,7 @@ sudo /opt/splunk-2/splunk/bin/splunk btool server list cluster debug | grep fact
 
 ### confirm file contents
 ```
-sudo cat /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
+sudo cat /opt/splunk-2/splunk/etc/manager-apps/_cluster/local/indexes.conf
 ```
  ### this action effectively creates a bundle
 
