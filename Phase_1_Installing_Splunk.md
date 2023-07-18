@@ -183,9 +183,8 @@ ls -las
 ### [Discussion Point] : Optional to do during session 
 ### Set optimized Linux OS limits for Splunk
 ```
-sudo nano /etc/systemd/system/Splunkd.service
+sudo vi /etc/systemd/system/Splunkd.service
 ```
-
 #### Delete line with LimitNOFILE value and replace with lines the following  
 ```
 LimitCORE=0
@@ -207,7 +206,7 @@ TasksMax=infinity
 ```
 ### Create a systemd service for disabling THP
 ```
-sudo nano /etc/systemd/system/disable-thp.service
+sudo vi /etc/systemd/system/disable-thp.service
 ```
 #### Update as follows
 ### copy and paste loses carriage returns

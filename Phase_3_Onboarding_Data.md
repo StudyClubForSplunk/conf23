@@ -84,7 +84,7 @@ sudo cp /opt/splunk-2/splunk/etc/master-apps/_cluster/default/indexes.conf /opt/
 ### [Discussion Point] : Default folder v Local folder
 
 ```
-sudo nano /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
+sudo vi /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
 ```
 insert stanza and modify
 ```
