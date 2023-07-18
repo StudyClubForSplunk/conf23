@@ -208,6 +208,10 @@ LimitNOFILE=1024000
 LimitNPROC=512000
 TasksMax=infinity
 ```
+[Disucssion Point] - vi operations
+Save file by pressing ESC key, then :w
+Close file by pressing ESC key, then :q
+
 ### Create a systemd service for disabling THP
 ```
 sudo vi /etc/systemd/system/disable-thp.service

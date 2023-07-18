@@ -100,6 +100,10 @@ repFactor = auto
 ```
 ### [Discussion Point] : repFactor = auto 
 
+### [Disucssion Point] - vi operations
+Save file by pressing ESC key, then :w
+Close file by pressing ESC key, then :q
+
 ### confirm file contents
 ```
 sudo cat /opt/splunk-2/splunk/etc/manager-apps/_cluster/local/indexes.conf
