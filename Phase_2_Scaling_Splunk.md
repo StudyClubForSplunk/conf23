@@ -105,6 +105,7 @@ show that Splunk is now listening on port 8080
 ```
 sudo lsof -i -P -n | grep LISTEN | grep splunkd
 ```
+## [Observation Point] : View Clustering info on Cluster Manager in UI
 
 ### Peer node configuration for StudyClubForSplunk-SH01 in UI
 Manager URI  
