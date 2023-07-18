@@ -108,8 +108,16 @@ sudo cat /opt/splunk-2/splunk/etc/manager-apps/_cluster/local/indexes.conf
  ### [Discussion Point] : How can budles be pushed out
 We use the WebUI on StudyClubForSplunk-Manager for this session  
 Command line method on StudyClubForSplunk-Manager  would be  
- ### [Discussion Point] : update correct files in correct locations
- Implementation Planning   
+ ### [Discussion Point] : Implementation Planning 
+ use correct locations  
+ right action  
+ right configuration  
+ right instance  
+ right permissions  
+ right authority  
+ right approval
+ right testing and assurance  
+   
  ### Check and validate the bundle  
  
 /opt/splunk-2/splunk/bin/splunk validate cluster-bundle  
