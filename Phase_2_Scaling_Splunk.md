@@ -59,7 +59,11 @@ sudo lsof -i -P -n | grep LISTEN | grep splunkd
 ### Be sure to select a port that is not in use - * Implementation Planning * 
 ## [Discussion Point] : Change Control (ITIL)
 
-### Peer node configuration for StudyClubForSplunk-IDX02
+## [Observation Point] : View Clustering info on Cluster Manager in UI
+
+
+
+### Peer node configuration for StudyClubForSplunk-IDX02 in UI
 Manager URI  
 ```
 https://localhost:8092
@@ -81,7 +85,7 @@ sudo lsof -i -P -n | grep LISTEN | grep splunkd
 ```
 
 
-### Peer node configuration for StudyClubForSplunk-IDX01
+### Peer node configuration for StudyClubForSplunk-IDX01 in UI
 Manager URI  
 ```
 https://localhost:8092
@@ -102,7 +106,7 @@ show that Splunk is now listening on port 8080
 sudo lsof -i -P -n | grep LISTEN | grep splunkd
 ```
 
-### Peer node configuration for StudyClubForSplunk-SH01
+### Peer node configuration for StudyClubForSplunk-SH01 in UI
 Manager URI  
 ```
 https://localhost:8092
