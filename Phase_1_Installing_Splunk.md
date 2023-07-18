@@ -235,6 +235,7 @@ WantedBy=multi-user.target
 ```
 sudo chmod 755 /etc/systemd/system/disable-thp.service
 ```
+755 open to the world  
 Reference https://linuxize.com/post/chmod-command-in-linux/  
 
 ### Reload Linux configurations 
