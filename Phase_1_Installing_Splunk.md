@@ -40,6 +40,7 @@ ls
 ```
 
 ### Move Splunk installer to /tmp folder
+### [Discussion Point] : Housekeeping
 ```
 mv splunk-9.0.5-e9494146ae5c-Linux-x86_64.tgz /tmp
 ```
