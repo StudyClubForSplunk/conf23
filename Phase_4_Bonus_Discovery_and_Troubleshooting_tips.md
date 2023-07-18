@@ -1,14 +1,19 @@
 ## Bonus Discovery and Troubleshooting Tips 
 
-## Search for your Onboarded Data
+## Search for your Onboarded Data via UI
+```
 index=study_club source="/studyclubforsplunk/www2/access.log"
+```
 
-## Check the tailreader for issues reported
+## Check the tailreader for issues reported via UI
+```
 index=_internal TAILREADER file="'/studyclubforsplunk/www2/access.log'"
-
+```
 
 ## Change to Splunk User
+```
 sudo su - splunk
+```
 
 ## Check for Issues on Splunk's Inputstatus via commandline
 ```
