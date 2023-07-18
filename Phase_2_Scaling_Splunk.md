@@ -17,6 +17,8 @@ Order of implementation
 ### StudyClubForSplunk-Manager
 ### We will use the Web UI to create the cluster
 
+## Please click the links in the Splunkshow enrolment page ending in :444, :445 and :446
+
 This could also be achieved via command line  
 /opt/splunk/bin/splunk edit cluster-config -mode master -replication_factor 2 -search_factor 2 -secret sc4sKey -cluster_label studyclub  
 /opt/splunk/bin/splunk restart  
