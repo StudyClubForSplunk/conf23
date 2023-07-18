@@ -118,6 +118,7 @@ Command line method on StudyClubForSplunk-Manager  would be
  right authority  
  right approval
  right testing and assurance  
+ document  
    
  ### Check and validate the bundle  
  
