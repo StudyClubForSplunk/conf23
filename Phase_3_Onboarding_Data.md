@@ -176,9 +176,4 @@ use existing index web_studyclub during wizard
 Observe Indexer Clustering : Manager Node page
 
 
-Check in WebUI of StudyClubForSplunk-SH01 using SPL  
-```
-index=web_studyclub
-```
-
 ### [Observation Point] : How could this be more effecient and more automated
