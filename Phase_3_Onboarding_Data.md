@@ -76,17 +76,13 @@ cat /opt/splunk/etc/apps/search/local/indexes.conf
 ```
 sudo cat /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
 ```
-#### Copy from IDX01 to Cluster Manager if needed
-```
-sudo cp /opt/splunk/etc/apps/search/local/indexes.conf /opt/splunk-2/splunk/etc/master-apps/_cluster/local/
-```
 
 ### [Discussion Point] : Default folder v Local folder
 
 ```
 sudo vi /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
 ```
-insert stanza and modify
+insert below stanza
 ```
 [studyclub_web]
 coldPath = $SPLUNK_DB/studyclub_web/colddb
