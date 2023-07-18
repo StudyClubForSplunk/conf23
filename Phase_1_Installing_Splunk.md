@@ -158,12 +158,13 @@ sudo /opt/splunk/bin/splunk disable boot-start
 ### Configure Splunk to run when rebooted 
 ### [Discussion Point] : What is init-d and systemd?
 Reference https://docs.splunk.com/Documentation/Splunk/9.1.0/Admin/RunSplunkassystemdservice  
+systemd supports parallel processing  
 ```
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk -systemd-managed 1 
 ```
 
 
-#### Systemd manages the Splunk service. Use 'systemctl start Splunkd' to start the service. Root permission is required. Login as root user or use sudo.
+#### Systemd manages the Splunk service. Use 'systemctl start Splunkd' to start the service. Root permission is required.
 ```
 sudo systemctl start Splunkd
 ```
@@ -226,7 +227,7 @@ WantedBy=multi-user.target
 ```
 
 ### Update read permissions so all users can read and execute this file
-### [Discussion Point] : chown changes ownership : chmod changes permissions : consultant boundaries
+### [Discussion Point] : chown changes ownership : chmod changes permissions : authorized actions/remit
 ```
 sudo chmod 755 /etc/systemd/system/disable-thp.service
 ```
