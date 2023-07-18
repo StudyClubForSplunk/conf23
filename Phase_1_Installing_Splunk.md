@@ -91,8 +91,8 @@ ls -las /opt/splunk
 
 
 ### [Discussion Point] : The how and why of starting Splunk for the first time
-What account should we run Splunk as?
-Best practive v Organisational standards
+What account would we run Splunk as by using this command?  
+Best practive v Organisational standards  
 ```
 /opt/splunk/bin/splunk start --accept-license --answer-yes 
 ```
