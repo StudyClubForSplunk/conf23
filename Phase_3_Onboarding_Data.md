@@ -104,7 +104,7 @@ repFactor = auto
 Save file by pressing ESC key, then :w
 Close file by pressing ESC key, then :q
 
-### [Disucssion Point] - Effective clsuter setting can be listed using btool
+### [Disucssion Point] - Effective cluster settings can be listed using btool
 ```
 sudo /opt/splunk-2/splunk/bin/splunk btool server list cluster debug | grep factor
 ```
