@@ -76,14 +76,11 @@ cat /opt/splunk/etc/apps/search/local/indexes.conf
 ```
 sudo cat /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
 ```
-#### Create a local version if needed
+#### Copy from IDX01 to Cluster Manager if needed
 ```
-cp /opt/splunk-2/splunk/etc/master-apps/_cluster/default/indexes.conf /opt/splunk-2/splunk/etc/master-apps/_cluster/local
+sudo cp /opt/splunk/etc/apps/search/local/indexes.conf /opt/splunk-2/splunk/etc/master-apps/_cluster/local/
 ```
 
-```
-sudo cp /opt/splunk-2/splunk/etc/master-apps/_cluster/default/indexes.conf /opt/splunk-2/splunk/etc/master-apps/_cluster/local
-```
 ### [Discussion Point] : Default folder v Local folder
 
 ```
