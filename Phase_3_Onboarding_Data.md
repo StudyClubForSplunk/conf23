@@ -4,7 +4,9 @@
 
 ### This phase is designed to onboard data to our Splunk infrastructure using best practices and our consultant experience.
 
-### [Observation Point] : Are logs accessible in the WebUI of StudyClubForSplunk-IDX01?
+### Data Onboarding in UI of tudyClubForSplunk-IDX01?
+### [Observation Point] : Are desired logs accessible?
+
 ### [Observation Point] : Is there anything different about the source folder?
 
 ### Observe permissions on source folder
