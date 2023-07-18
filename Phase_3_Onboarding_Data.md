@@ -166,12 +166,12 @@ Check index in WebUI of StudyClubForSplunk-IDX02 using SPL
 | eventcount summarize=false index=* | dedup index | fields index 
 ```
 
-## Onboard another log file on StudyClubForSplunk-IDX01
+## Onboard another log file on StudyClubForSplunk-IDX02
 /studyclubforsplunk/www2/access.log
 use existing index web_studyclub during wizard
 
 ### [Observation Point] : Has data been onboarded?
-Check in WebUI of StudyClubForSplunk-IDX01 using SPL  
+Check in WebUI of StudyClubForSplunk-IDX02 using SPL  
 ```
 index=web_studyclub
 ```
@@ -179,7 +179,7 @@ Check in WebUI of StudyClubForSplunk-SH01 using SPL
 ```
 index=web_studyclub
 ```
-Check in WebUI of StudyClubForSplunk-IDX02 using SPL  
+Check in WebUI of StudyClubForSplunk-IDX01 using SPL  
 ```
 index=web_studyclub
 ```
