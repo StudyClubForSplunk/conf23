@@ -123,15 +123,15 @@ Command line method on StudyClubForSplunk-Manager  would be
    
  ### Check and validate the bundle  
  
-/opt/splunk-2/splunk/bin/splunk validate cluster-bundle  
+sudo /opt/splunk-2/splunk/bin/splunk validate cluster-bundle  
 
 ### Push out bundle  
 
-/opt/splunk-2/splunk/bin/splunk apply cluster-bundle  
+sudo /opt/splunk-2/splunk/bin/splunk apply cluster-bundle  
 
 ### Check status of the pushed bundle  
 
-/opt/splunk-2/splunk/bin/splunk show cluster-bundle-status  
+sudo /opt/splunk-2/splunk/bin/splunk show cluster-bundle-status  
 
 
 ### Check if index is showing in WebUI on StudyClubForSplunk-Manager
