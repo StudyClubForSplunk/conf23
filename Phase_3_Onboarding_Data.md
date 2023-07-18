@@ -69,11 +69,12 @@ StudyClubForSplunk-IDX01
 cat /opt/splunk/etc/apps/search/local/indexes.conf
 ```
 ### We need to copy this stanza format to the ClusterManager instance
-#### correct location is /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
-#### create files if it does not already exist
+#### Correct location is /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
+#### Check if file already exist
 ```
-/opt/splunk-2/splunk/etc/master-apps/_cluster/local
+sudo cat /opt/splunk-2/splunk/etc/master-apps/_cluster/local/indexes.conf
 ```
+#### Create a local version if needed
 ```
 cp /opt/splunk-2/splunk/etc/master-apps/_cluster/default/indexes.conf /opt/splunk-2/splunk/etc/master-apps/_cluster/local
 ```
